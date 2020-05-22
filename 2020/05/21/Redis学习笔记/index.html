@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://www.datasheep.info">
   <title>Redis学习笔记 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Redis简介Redis是高性能的key-value数据库。特点：  支持数据持久化 支持key-value、list、set、zset、hash类型数据 支持master-slave模式的数据备份  Redis安装12345678910$ wget http:&#x2F;&#x2F;download.redis.io&#x2F;releases&#x2F;redis-6.0.3.tar.gz$">
+  <meta name="description" content="Redis简介Redis是高性能的key-value数据库。特点：  支持数据持久化 支持key-value、list、set、zset、hash类型数据 支持master-slave模式的数据备份">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis学习笔记">
 <meta property="og:url" content="http://www.datasheep.info/2020/05/21/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Redis简介Redis是高性能的key-value数据库。特点：  支持数据持久化 支持key-value、list、set、zset、hash类型数据 支持master-slave模式的数据备份  Redis安装12345678910$ wget http:&#x2F;&#x2F;download.redis.io&#x2F;releases&#x2F;redis-6.0.3.tar.gz$">
+<meta property="og:description" content="Redis简介Redis是高性能的key-value数据库。特点：  支持数据持久化 支持key-value、list、set、zset、hash类型数据 支持master-slave模式的数据备份">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-21T12:32:22.000Z">
-<meta property="article:modified_time" content="2020-05-21T14:54:47.335Z">
+<meta property="article:modified_time" content="2020-05-22T03:14:06.128Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Redis">
 <meta name="twitter:card" content="summary">
@@ -188,10 +188,11 @@
 <ul>
 <li>支持数据持久化</li>
 <li>支持key-value、list、set、zset、hash类型数据</li>
-<li>支持master-slave模式的数据备份</li>
-</ul>
+<li>支持master-slave模式的数据备份<a id="more"></a>
 <h1 id="Redis安装"><a href="#Redis安装" class="headerlink" title="Redis安装"></a>Redis安装</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ wget http:&#x2F;&#x2F;download.redis.io&#x2F;releases&#x2F;redis-6.0.3.tar.gz</span><br><span class="line">$ tar xzf redis-6.0.3.tar.gz</span><br><span class="line">$ cd redis-6.0.3</span><br><span class="line">$ make</span><br><span class="line">$ cd src</span><br><span class="line">$ .&#x2F;redis-server</span><br><span class="line">$ .&#x2F;redis-cli</span><br><span class="line">redis&gt; set foo bar</span><br><span class="line">redis&gt; get foo</span><br><span class="line">&quot;bar&quot;</span><br></pre></td></tr></table></figure>
 
+</li>
+</ul>
 <h1 id="Redis配置"><a href="#Redis配置" class="headerlink" title="Redis配置"></a>Redis配置</h1><p>Redis的配置文件位于安装目录下的redis.conf文件，可以通过CONFIG命令查看或设置配置项</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; config get loglevel</span><br><span class="line">1) &quot;loglevel&quot;</span><br><span class="line">2) &quot;notice&quot;</span><br></pre></td></tr></table></figure>
 <p>可以通过*匹配所有配置项<br><code>127.0.0.1:6379&gt; config get *</code><br>使用CONFIG set命令可以修改配置</p>
@@ -481,11 +482,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+                <a href="javascript:void(0)" class="js-tag color3">项目</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">项目</a>
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
             
             <div class="clearfix"></div>
