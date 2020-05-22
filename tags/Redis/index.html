@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.datasheep.info">
-  <title>Hexo</title>
+  <title>Tag: Redis | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://www.datasheep.info/index.html">
+<meta property="og:url" content="http://www.datasheep.info/tags/Redis/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="John Doe">
@@ -151,172 +151,34 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-亿级流量电商详情页系统实战" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/21/%E4%BA%BF%E7%BA%A7%E6%B5%81%E9%87%8F%E7%94%B5%E5%95%86%E8%AF%A6%E6%83%85%E9%A1%B5%E7%B3%BB%E7%BB%9F%E5%AE%9E%E6%88%98/">亿级流量电商详情页系统实战</a>
-    </h1>
-  
-
-	<!--显示阅读次数-->
-	
-        
-        <a href="/2020/05/21/%E4%BA%BF%E7%BA%A7%E6%B5%81%E9%87%8F%E7%94%B5%E5%95%86%E8%AF%A6%E6%83%85%E9%A1%B5%E7%B3%BB%E7%BB%9F%E5%AE%9E%E6%88%98/" class="archive-article-date">
-  	<time datetime="2020-05-21T14:57:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-21</time>
-</a>
-        
-      </header>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="高并发高可用复杂系统中的缓存架构有哪些东西？"><a href="#高并发高可用复杂系统中的缓存架构有哪些东西？" class="headerlink" title="高并发高可用复杂系统中的缓存架构有哪些东西？"></a>高并发高可用复杂系统中的缓存架构有哪些东西？</h1><ol>
-<li>缓存架构/技术掌握的不够，对你的发展带来了哪些阻碍？</li>
-</ol>
-<p>工作中:</p>
-<p>如果你这块技术掌握不够，然后你的公司的项目遇到了一些相关的难题，高并发+高性能的场景，hold不住类似的这种高并发的系统</p>
-<p>因为缓存架构做得不好，不到位，实际在公司的项目里，出了一些大case，导致系统崩溃，巨大的经济损失</p>
-<p>职业发展中:</p>
-<p>redis，memcached，activemq，zookeeper，kafka，lucene，activiti，爬虫，或者等等，各种技术，写了都几十种技术</p>
-<p>没有一样是精通的，redis就会简单的操作，memcached操作，activemq，zookeeper，爬虫，全都是简单的操作</p>
-<p>架构设计思路，有没有一些考量的点，高并发的中场景，高可用的场景，说不出来</p>
-<p>不可能做到更高级的一个职位了，因为很多公司的人也不傻，技术一看就平平庸庸，怎么给你一个很好的职位呢？职业发展怎么做上去呢？</p>
-<p>亮点，技术亮点，高人一筹</p>
-<p>java高工，java资深工，java架构，技术亮点，造诣</p>
-<p>如果你的技术很牛，各种技术都有深度，架构面临过一些复杂的场景，别人搞不定的高并发高可用的系统架构，你都能搞定，职业发展就会做的很好</p>
-<ol start="2">
-<li>真正能支撑高并发以及高可用的复杂系统中的缓存架构有哪些东西？</li>
-</ol>
-<p>（1）如何让redis集群支撑几十万QPS高并发+99.99%高可用+TB级海量数据+企业级数据备份与恢复？：redis企业级集群架构</p>
-<p>（2）如何支撑高性能以及高并发到极致？同时给缓存架构最后的安全保护层？：(nginx+lua)+redis+ehcache的三级缓存架构</p>
-<p>（3）高并发场景下，如何解决数据库与缓存双写的时候数据不一致的情况？：企业级的完美的数据库+缓存双写一致性解决方案</p>
-<p>（4）如何解决大value缓存的全量更新效率低下问题？：缓存维度化拆分解决方案</p>
-<p>（5）如何将缓存命中率提升到极致？：双层nginx部署架构，以及lua脚本实现的一致性hash流量分发策略</p>
-<p>（6）如何解决高并发场景下，缓存重建时的分布式并发重建的冲突问题？：基于zookeeper分布式锁的缓存并发重建解决方案</p>
-<p>（7）如何解决高并发场景下，缓存冷启动MySQL瞬间被打死的问题？：基于storm实时统计热数据的分布式快速缓存预热解决方案</p>
-<p>（8）如何解决热点缓存导致单机器负载瞬间超高？：基于storm的实时热点发现，以及毫秒级的实时热点缓存负载均衡降级</p>
-<p>（9）如何解决分布式系统中的服务高可用问题？避免多层服务依赖因为少量故障导致系统崩溃？：基于hystrix的高可用缓存服务，资源隔离+限流+降级+熔断+超时控制</p>
-<p>（10）如何应用分布式系统中的高可用服务的高阶技术？：基于hystrix的容错+多级降级+手动降级+生产环境参数优化经验+可视化运维与监控</p>
-<p>（11）如何解决恐怖的缓存雪崩问题？避免给公司带来巨大的经济损失？：独家的事前+事中+事后三层次完美解决方案</p>
-<p>（12）如何解决高并发场景下的缓存穿透问题？避免给MySQL带来过大的压力？：缓存穿透解决方案</p>
-<p>（13）如何解决高并发场景下的缓存失效问题？避免给redis集群带来过大的压力？：缓存失效解决方案</p>
-
-      
-
-
-      
-    </div>
-    <div class="article-info article-info-index">
+    
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">项目</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/21/%E4%BA%BF%E7%BA%A7%E6%B5%81%E9%87%8F%E7%94%B5%E5%95%86%E8%AF%A6%E6%83%85%E9%A1%B5%E7%B3%BB%E7%BB%9F%E5%AE%9E%E6%88%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Redis学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+        <div class="archives">
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/21/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Redis学习笔记</a>
-    </h1>
-  
-
-	<!--显示阅读次数-->
-	
-        
-        <a href="/2020/05/21/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/05/21/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
   	<time datetime="2020-05-21T12:32:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-21</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Redis简介"><a href="#Redis简介" class="headerlink" title="Redis简介"></a>Redis简介</h1><p>Redis是高性能的key-value数据库。<br>特点：</p>
-<ul>
-<li>支持数据持久化</li>
-<li>支持key-value、list、set、zset、hash类型数据</li>
-<li>支持master-slave模式的数据备份</li>
-</ul>
-<h1 id="Redis安装"><a href="#Redis安装" class="headerlink" title="Redis安装"></a>Redis安装</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ wget http:&#x2F;&#x2F;download.redis.io&#x2F;releases&#x2F;redis-6.0.3.tar.gz</span><br><span class="line">$ tar xzf redis-6.0.3.tar.gz</span><br><span class="line">$ cd redis-6.0.3</span><br><span class="line">$ make</span><br><span class="line">$ cd src</span><br><span class="line">$ .&#x2F;redis-server</span><br><span class="line">$ .&#x2F;redis-cli</span><br><span class="line">redis&gt; set foo bar</span><br><span class="line">redis&gt; get foo</span><br><span class="line">&quot;bar&quot;</span><br></pre></td></tr></table></figure>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/05/21/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Redis学习笔记</a>
+    </h1>
+  
 
-<h1 id="Redis配置"><a href="#Redis配置" class="headerlink" title="Redis配置"></a>Redis配置</h1><p>Redis的配置文件位于安装目录下的redis.conf文件，可以通过CONFIG命令查看或设置配置项</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; config get loglevel</span><br><span class="line">1) &quot;loglevel&quot;</span><br><span class="line">2) &quot;notice&quot;</span><br></pre></td></tr></table></figure>
-<p>可以通过*匹配所有配置项<br><code>127.0.0.1:6379&gt; config get *</code><br>使用CONFIG set命令可以修改配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; config set loglevel &quot;warning&quot;</span><br><span class="line"></span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; config get loglevel</span><br><span class="line">1) &quot;loglevel&quot;</span><br><span class="line">2) &quot;warning&quot;</span><br></pre></td></tr></table></figure>
-
-
-<h1 id="Redis数据类型"><a href="#Redis数据类型" class="headerlink" title="Redis数据类型"></a>Redis数据类型</h1><ol>
-<li>String（字符串）<br>最基本的数据类型，一个key可以对应一个value，二进制安全的，可以存储图片或者序列化的对象，最大能存储512MB<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; set bigdata &quot;hadoop&quot;</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; get bigdata</span><br><span class="line">&quot;hadoop&quot;</span><br></pre></td></tr></table></figure>
-字符串相关命令：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">set key value 设置指定key的值</span><br><span class="line">get key 获取key的值</span><br><span class="line">getrange key start end 返回key中字符串的子字符</span><br><span class="line">getset key value 将给定的key的值设置为value，并将key的旧值返回</span><br><span class="line">getbit key offset 获取key的value上的指定偏移量的位</span><br><span class="line">mget key1[key2...] 获取所有给定key的值</span><br><span class="line">setbit key offset value 设置或清除key的value上的指定偏移量的位</span><br><span class="line">setex key seconds value 将值关联到key 并将key到过期时间设为seconds</span><br><span class="line">setnx key value 只在key不存在时设置key到值</span><br><span class="line">setrange key offset value 从偏移量开始用value覆写key所存储的字符串值</span><br><span class="line">strlen key 返回key存储字符串的长度</span><br><span class="line">mset key value[key value...] 同时设置一个或多个key-value对</span><br><span class="line">msetnx key value [key value...] 当所有给定key都不存在时，设置一个或多好key-value对</span><br><span class="line">psetex key milliseconds value 以毫秒为单位设置key的生存时间</span><br><span class="line">incr key 将key中存储的数字值加一</span><br><span class="line">incrby key increment 将key所存储的值加上指定的增量值</span><br><span class="line">incrbyfloat key increment 将key所存储的值加上指定的浮点值</span><br><span class="line">decr 将key中存储的数字值减一</span><br><span class="line">decrby key decrement key的值减去给定值</span><br><span class="line">append key value 将指定的value追加到key原值的末尾</span><br></pre></td></tr></table></figure></li>
-<li>Hash（哈希）<br>Redis Hash是一个键值（key-value）对集合<br>其实质是一个string类型的field和value的映射表，适合存储对象<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; del bigdata</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; hmset bigdata field1 &quot;hadoop&quot; field2 &quot;hive&quot; </span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; hget bigdata field1</span><br><span class="line">&quot;hadoop&quot;</span><br><span class="line">127.0.0.1:6379&gt; hget bigdata field2</span><br><span class="line">&quot;hive&quot;</span><br></pre></td></tr></table></figure></li>
-<li>List（列表）<br>简单的字符串列表，按照<strong>插入顺序</strong>排序<br>可以添加一个元素到列表的头部或者尾部<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; del bigdata</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; lpush bigdata hadoop</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; lpush bigdata hive</span><br><span class="line">(integer) 2</span><br><span class="line">127.0.0.1:6379&gt; lpush bigdata kafka</span><br><span class="line">(integer) 3</span><br><span class="line">127.0.0.1:6379&gt; lrange bigdata 0 10</span><br><span class="line">1) &quot;kafka&quot;</span><br><span class="line">2) &quot;hive&quot;</span><br><span class="line">3) &quot;hadoop&quot;</span><br></pre></td></tr></table></figure></li>
-<li>Set（集合）<br>Set是string类型的<strong>无序</strong>集合<br>集合通过哈希表实现的，因此添加、删除、查找的复杂度都是O(1)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; del bigdata</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; sadd bigdata hadoop</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; sadd bigdata hive</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; sadd bigdata hive</span><br><span class="line">(integer) 0</span><br><span class="line">127.0.0.1:6379&gt; sadd bigdata hbase</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; smembers bigdata</span><br><span class="line">1) &quot;hadoop&quot;</span><br><span class="line">2) &quot;hive&quot;</span><br><span class="line">3) &quot;hbase&quot;</span><br></pre></td></tr></table></figure></li>
-<li>zset（sorted set：有序集合）<br>  zset和set一样，也是string类型元素的集合，且不允许添加重复的元素<br>  不同的是每个元素都会关联一个double类型的分数，redis通过分数来为集合中的成员进行从小到大的排序<br>  zset的元素是唯一的，但是分数（score）是可以重复的<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; del bigdata</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; zadd bigdata 0 hadoop</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; zadd bigdata 0 hive</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; zadd bigdata 0 hbase</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; zadd bigdata 0 kafka</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; zadd bigdata 0 kafka</span><br><span class="line">(integer) 0</span><br><span class="line">127.0.0.1:6379&gt; zrangebyscore bigdata 0 10</span><br><span class="line">1) &quot;hadoop&quot;</span><br><span class="line">2) &quot;hbase&quot;</span><br><span class="line">3) &quot;hive&quot;</span><br><span class="line">4) &quot;kafka&quot;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h1 id="Redis命令"><a href="#Redis命令" class="headerlink" title="Redis命令"></a>Redis命令</h1><p>redis命令执行需要一个redis服务端和redis客户端<br><code>redis-server</code>启动服务端<br><code>redis-cli</code>启动客户端<br>在远程服务上执行命令<br><code>redis-cli -h host -p port -a password</code></p>
-<h1 id="Redis键（key）"><a href="#Redis键（key）" class="headerlink" title="Redis键（key）"></a>Redis键（key）</h1><p>键命令用于管理redis键<br>基本语法：<code>command key_name</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; set bigdata hadoop</span><br><span class="line">OK</span><br><span class="line">127.0.0.1:6379&gt; get bigdata</span><br><span class="line">&quot;hadoop&quot;</span><br><span class="line">127.0.0.1:6379&gt; del bigdata</span><br><span class="line">(integer) 1</span><br></pre></td></tr></table></figure>
-<p>相关键命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">del key 删除key</span><br><span class="line">dump key 序列化给定key</span><br><span class="line">exists key 检查给定key是否存在</span><br><span class="line">expire key seconds 为key设置过期时间，秒</span><br><span class="line">expireat key timestamp 接收UNIX时间戳设置过期时间</span><br><span class="line">pexpire key milliseconds 设置key的过期时间以毫秒计</span><br><span class="line">pexpire key milliseconds-timestamp 设置key的过期时间的时间戳以毫秒计</span><br><span class="line">keys pattern 查找所有符合给定模式的key</span><br><span class="line">move key db 移动当前库的可以到指定的数据库</span><br><span class="line">persist key 移除过期时间，将key持久保持</span><br><span class="line">pttl key 以毫秒为单位返回key的剩余过期时间</span><br><span class="line">ttl（time to live） key 以秒为单位，返回给定key的剩余生存时间</span><br><span class="line">randomkey 随机返回一个key</span><br><span class="line">rename key newkey 修改key的名称</span><br><span class="line">renamenx key newkey 仅当newkey不存在时，将key改名为newkey</span><br><span class="line">scan cursor[match pattern][count count] 迭代数据库中的键</span><br><span class="line">type key 返回key所存储的值的类型</span><br></pre></td></tr></table></figure>
-
-      
-
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -328,119 +190,19 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/21/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+    </div></section>
+  
+
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/21/hello-world/">Hello World</a>
-    </h1>
-  
-
-	<!--显示阅读次数-->
-	
-        
-        <a href="/2020/05/21/hello-world/" class="archive-article-date">
-  	<time datetime="2020-05-21T00:44:10.287Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/21/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
 
 
           </div>
@@ -465,10 +227,10 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
