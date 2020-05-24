@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://www.datasheep.info">
   <title>NoSQL概述 | 数据杨的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="所有天上飞的理念，都需要落地的实现 ——尚硅谷周阳  网站架构的演变1、单机Mysql面临的问题；  数据量总大小一个机器可能放不下 数据的索引（B+ Tree）一个机器的内存可能放不下 访问量（读写混合）一个实例不能承受  2、Memcached（缓存）+Mysql+垂直拆分访问量上升，导致数据库性能问题，使用缓存技术来缓解数据库压力 3、Mysql主从读写分离写压力增加，memcached只">
+  <meta name="description" content="所有天上飞的理念，都需要落地的实现 ——尚硅谷周阳  网站架构的演变">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NoSQL概述">
 <meta property="og:url" content="http://www.datasheep.info/2020/05/24/NoSQL%E6%A6%82%E8%BF%B0/index.html">
 <meta property="og:site_name" content="数据杨的个人博客">
-<meta property="og:description" content="所有天上飞的理念，都需要落地的实现 ——尚硅谷周阳  网站架构的演变1、单机Mysql面临的问题；  数据量总大小一个机器可能放不下 数据的索引（B+ Tree）一个机器的内存可能放不下 访问量（读写混合）一个实例不能承受  2、Memcached（缓存）+Mysql+垂直拆分访问量上升，导致数据库性能问题，使用缓存技术来缓解数据库压力 3、Mysql主从读写分离写压力增加，memcached只">
+<meta property="og:description" content="所有天上飞的理念，都需要落地的实现 ——尚硅谷周阳  网站架构的演变">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://www.datasheep.info/assert/nosql_danji.png">
 <meta property="og:image" content="http://www.datasheep.info/assert/nosql_memcache.png">
@@ -27,7 +27,7 @@
 <meta property="og:image" content="http://www.datasheep.info/assert/nosql_db.png">
 <meta property="og:image" content="http://www.datasheep.info/assert/nosql_cap.png">
 <meta property="article:published_time" content="2020-05-24T03:58:06.000Z">
-<meta property="article:modified_time" content="2020-05-24T09:48:42.291Z">
+<meta property="article:modified_time" content="2020-05-24T15:00:21.571Z">
 <meta property="article:author" content="Data Sheep">
 <meta property="article:tag" content="NoSQL">
 <meta name="twitter:card" content="summary">
@@ -258,7 +258,8 @@ var _hmt = _hmt || [];
         <blockquote>
 <p>所有天上飞的理念，都需要落地的实现 ——尚硅谷周阳</p>
 </blockquote>
-<h1 id="网站架构的演变"><a href="#网站架构的演变" class="headerlink" title="网站架构的演变"></a>网站架构的演变</h1><p>1、单机Mysql<br><img src="/assert/nosql_danji.png" alt="avator"><br>面临的问题；</p>
+<h1 id="网站架构的演变"><a href="#网站架构的演变" class="headerlink" title="网站架构的演变"></a>网站架构的演变</h1><a id="more"></a>
+<p>1、单机Mysql<br><img src="/assert/nosql_danji.png" alt="avator"><br>面临的问题；</p>
 <ul>
 <li>数据量总大小一个机器可能放不下</li>
 <li>数据的索引（B+ Tree）一个机器的内存可能放不下</li>
