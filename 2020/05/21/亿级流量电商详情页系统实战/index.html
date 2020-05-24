@@ -17,8 +17,10 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://www.datasheep.info/assert/%E5%B0%8F%E5%9E%8B%E7%94%B5%E5%95%86%E9%9D%99%E6%80%81%E5%8C%96%E6%9E%B6%E6%9E%84.png">
 <meta property="og:image" content="http://www.datasheep.info/assert/%E5%A4%A7%E5%9E%8B%E7%94%B5%E5%95%86%E7%BD%91%E7%AB%99%E7%9A%84%E8%AF%A6%E6%83%85%E9%A1%B5%E6%9E%B6%E6%9E%84.png">
+<meta property="og:image" content="http://www.datasheep.info/assert/redis%E6%8C%81%E4%B9%85%E5%8C%96%E7%9A%84%E6%84%8F%E4%B9%89.png">
+<meta property="og:image" content="http://www.datasheep.info/assert/RDB%E5%92%8CAOF%E7%9A%84%E4%BB%8B%E7%BB%8D.png">
 <meta property="article:published_time" content="2020-05-21T14:57:30.000Z">
-<meta property="article:modified_time" content="2020-05-23T09:26:20.016Z">
+<meta property="article:modified_time" content="2020-05-24T14:51:35.451Z">
 <meta property="article:author" content="Data Sheep">
 <meta property="article:tag" content="项目">
 <meta name="twitter:card" content="summary">
@@ -199,7 +201,7 @@ var _hmt = _hmt || [];
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="font-size: 16px;color: grey">  字数统计: </span>
         <!--这里样式可以自己定制-->
-        <span class="post-count" style="font-size: 16px;color: grey">1.2k字</span>
+        <span class="post-count" style="font-size: 16px;color: grey">3k字</span>
       </span>
     </span>
     
@@ -208,7 +210,7 @@ var _hmt = _hmt || [];
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="font-size: 16px;color: grey">  阅读时长: </span>
-        <span class="post-count" style="font-size: 16px;color: grey">4分</span>
+        <span class="post-count" style="font-size: 16px;color: grey">10分</span>
       </span>
     </span>
 </div>
@@ -226,7 +228,7 @@ var _hmt = _hmt || [];
   <div id="toc-article" class="toc-article">
       <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
     <strong class="toc-title">文章目录</strong>
-           <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#高并发高可用复杂系统中的缓存架构有哪些东西？"><span class="toc-number">1.</span> <span class="toc-text">高并发高可用复杂系统中的缓存架构有哪些东西？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#小型电商商品详情页的架构"><span class="toc-number">2.</span> <span class="toc-text">小型电商商品详情页的架构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#大型电商网站的异步多级缓存构建-nginx数据本地化动态渲染的架构"><span class="toc-number">3.</span> <span class="toc-text">大型电商网站的异步多级缓存构建+nginx数据本地化动态渲染的架构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#能够支撑高并发-高可用-海量数据-备份恢复的redis的重要性"><span class="toc-number">4.</span> <span class="toc-text">能够支撑高并发+高可用+海量数据+备份恢复的redis的重要性</span></a></li></ol>
+           <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#高并发高可用复杂系统中的缓存架构有哪些东西？"><span class="toc-number">1.</span> <span class="toc-text">高并发高可用复杂系统中的缓存架构有哪些东西？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#小型电商商品详情页的架构"><span class="toc-number">2.</span> <span class="toc-text">小型电商商品详情页的架构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#大型电商网站的异步多级缓存构建-nginx数据本地化动态渲染的架构"><span class="toc-number">3.</span> <span class="toc-text">大型电商网站的异步多级缓存构建+nginx数据本地化动态渲染的架构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#能够支撑高并发-高可用-海量数据-备份恢复的redis的重要性"><span class="toc-number">4.</span> <span class="toc-text">能够支撑高并发+高可用+海量数据+备份恢复的redis的重要性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#redis生产环境启动方案"><span class="toc-number">5.</span> <span class="toc-text">redis生产环境启动方案</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Redis持久化机制对于故障恢复的意义"><span class="toc-number">6.</span> <span class="toc-text">Redis持久化机制对于故障恢复的意义</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Redis-RDB和AOF两种持久化机制的原理"><span class="toc-number">7.</span> <span class="toc-text">Redis RDB和AOF两种持久化机制的原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#RDB和AOF两种持久化机制介绍"><span class="toc-number">7.1.</span> <span class="toc-text">RDB和AOF两种持久化机制介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RDB持久化机制的优点"><span class="toc-number">7.2.</span> <span class="toc-text">RDB持久化机制的优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RDB持久化的缺点"><span class="toc-number">7.3.</span> <span class="toc-text">RDB持久化的缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AOF持久化的优点"><span class="toc-number">7.4.</span> <span class="toc-text">AOF持久化的优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AOF持久化的缺点"><span class="toc-number">7.5.</span> <span class="toc-text">AOF持久化的缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RDB和AOF的选择"><span class="toc-number">7.6.</span> <span class="toc-text">RDB和AOF的选择</span></a></li></ol></li></ol>
          </div>
    <script type="text/javascript">
   function showToc(){
@@ -285,6 +287,28 @@ var _hmt = _hmt || [];
 <p>缓存架构需要支撑高并发、高可用、海量数据、备份、随时可恢复，首先就是redis支撑</p>
 <p>最简单的缓存架构就是存取redis</p>
 <p>解决各种各样高并发场景下缓存难题，以及各种各样缓存架构本身的高可用问题</p>
+<h1 id="redis生产环境启动方案"><a href="#redis生产环境启动方案" class="headerlink" title="redis生产环境启动方案"></a>redis生产环境启动方案</h1><p>生产环境中要把redis作为一个系统的daemon进程去运行，每次系统启动，redis进程一起启动<br>配置redis.conf中的部分配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">daemonize   yes                         让redis以daemon进程运行</span><br><span class="line">pidfile     &#x2F;var&#x2F;run&#x2F;redis_6379.pid     设置redis的pid文件位置</span><br><span class="line">port        6379                        设置redis的监听端口号</span><br><span class="line">dir         &#x2F;var&#x2F;redis&#x2F;6379             设置持久化文件的存储位置</span><br></pre></td></tr></table></figure>
+<p>让redis跟随系统启动自动启动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">在脚本最上面添加两行注释</span><br><span class="line"># chkconfig:   2345 90 10</span><br><span class="line"></span><br><span class="line"># description:  Redis is a persistent key-value database</span><br><span class="line"></span><br><span class="line">chkconfig redis_6379 on 让脚本跟随开机执行</span><br></pre></td></tr></table></figure>
+
+<p>redis-cli的使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">redis-cli SHUTDOWN，连接本机的6379端口停止redis进程</span><br><span class="line"></span><br><span class="line">redis-cli -h 127.0.0.1 -p 6379 SHUTDOWN，制定要连接的ip和端口号</span><br><span class="line"></span><br><span class="line">redis-cli PING，ping redis的端口，看是否正常</span><br><span class="line"></span><br><span class="line">redis-cli，进入交互式命令行</span><br><span class="line"></span><br><span class="line">SET k1 v1</span><br><span class="line">GET k1</span><br></pre></td></tr></table></figure>
+<p>redis技术包括4块：</p>
+<ul>
+<li>redis各种数据结构和命令的使用，包括java api的使用</li>
+<li>redis一些特殊的解决方案的使用，pub/sub消息系统，分布式锁，输入的自动完成，等等</li>
+<li>redis日常的管理相关的命令</li>
+<li>redis企业级的集群部署和架构</li>
+</ul>
+<h1 id="Redis持久化机制对于故障恢复的意义"><a href="#Redis持久化机制对于故障恢复的意义" class="headerlink" title="Redis持久化机制对于故障恢复的意义"></a>Redis持久化机制对于故障恢复的意义</h1><p>redis持久化的意义：在于故障恢复,如果没有持久化，redis在遇到灾难性的故障时会丢失所有数据<br>通过持久化将数据落地到磁盘上，定期同步或备份到云存储上，可以保证数据不完全丢失，可以恢复部分<br><img src="/assert/redis%E6%8C%81%E4%B9%85%E5%8C%96%E7%9A%84%E6%84%8F%E4%B9%89.png" alt="avator"></p>
+<h1 id="Redis-RDB和AOF两种持久化机制的原理"><a href="#Redis-RDB和AOF两种持久化机制的原理" class="headerlink" title="Redis RDB和AOF两种持久化机制的原理"></a>Redis RDB和AOF两种持久化机制的原理</h1><p>持久化主要是做灾难恢复、数据恢复，也可以归类到高可用的一个环节，redis的持久化做好，在redis故障时可用通过备份数据快速恢复，立即对外提供服务，从而避免缓存雪崩问题，导致mysql承接高并发，最好导致mysql挂掉的情况</p>
+<h2 id="RDB和AOF两种持久化机制介绍"><a href="#RDB和AOF两种持久化机制介绍" class="headerlink" title="RDB和AOF两种持久化机制介绍"></a>RDB和AOF两种持久化机制介绍</h2><p><img src="/assert/RDB%E5%92%8CAOF%E7%9A%84%E4%BB%8B%E7%BB%8D.png" alt="avator"><br>RDB持久化机制，对redis中的数据执行周期性的持久化<br>AOF机制对每条写入命令作为日志，以append-only的模式写入一个日志文件中，在redis重启的时候，可以通过回放AOF日志中的写入指令来重新构建整个数据集<br>redis作为纯内存的缓存时：可以禁止RDB和AOF持久化机制<br>如果同时使用RDB和AOF两种持久化机制，在redis重启时，会使用AOF重新构建数据，因为AOF中的数据更加完整</p>
+<h2 id="RDB持久化机制的优点"><a href="#RDB持久化机制的优点" class="headerlink" title="RDB持久化机制的优点"></a>RDB持久化机制的优点</h2><p>1、RDB会生成很多个数据文件，每个数据文件代表来某时刻中redis的数据，多个数据文件的方式非常适合做冷备，可以将这种完整的数据文件发送到一些远程的安全存储中<br>2、RDB对redis对外提供的读写服务，影响非常小，可以让redis保持高性能<br>redis主进程会fork一个子进程，让子进程执行磁盘IO操作进行持久化<br>3、相对于AOF持久化，直接基于RDB数据文件来重启和恢复redis进程，会比较快捷</p>
+<h2 id="RDB持久化的缺点"><a href="#RDB持久化的缺点" class="headerlink" title="RDB持久化的缺点"></a>RDB持久化的缺点</h2><p>1、如果想要在redis故障时，尽可能少的丢失数据，那么RDB没有AOF好。一般来说，RDB数据快照文件，都是每隔5分钟，或者更长时间生成一次，这个时候就得接受一旦redis进程宕机，那么会丢失最近5分钟的数据<br>2、RDB每次在fork子进程来执行RDB快照数据文件生成的时候，如果数据文件特别大，可能会导致对客户端提供的服务暂停数毫秒，或者甚至数秒</p>
+<h2 id="AOF持久化的优点"><a href="#AOF持久化的优点" class="headerlink" title="AOF持久化的优点"></a>AOF持久化的优点</h2><p>1、AOF可以更好的保护数据不丢失，一般AOF会每隔1秒，通过一个后台线程执行一次fsync操作，最多丢失1秒钟的数据<br>2、AOF日志文件以append-only模式写入，所以没有任何磁盘寻址的开销，写入性能非常高，而且文件不容易破损，即使文件尾部破损，也很容易修复<br>3、AOF日志文件即使过大的时候，出现后台重写操作，也不会影响客户端的读写。因为在rewrite log的时候，会对其中的指导进行压缩，创建出一份需要恢复数据的最小日志出来。再创建新日志文件的时候，老的日志文件还是照常写入。当新的merge后的日志文件ready的时候，再交换新老日志文件即可。<br>4、AOF日志文件的命令通过非常可读的方式进行记录，这个特性非常适合做灾难性的误删除的紧急恢复。比如某人不小心用flushall命令清空了所有数据，只要这个时候后台rewrite还没有发生，那么就可以立即拷贝AOF文件，将最后一条flushall命令给删了，然后再将该AOF文件放回去，就可以通过恢复机制，自动恢复所有数据<br>![avator](/assert/AOF rewrite原理剖析.png)</p>
+<h2 id="AOF持久化的缺点"><a href="#AOF持久化的缺点" class="headerlink" title="AOF持久化的缺点"></a>AOF持久化的缺点</h2><p>1、对于同一份数据来说，AOF日志文件通常比RDB数据快照文件更大<br>2、AOF开启后，支持的写QPS会比RDB支持的写QPS低，因为AOF一般会配置成每秒fsync一次日志文件，当然，每秒一次fsync，性能也还是很高的<br>3、以前AOF发生过bug，就是通过AOF记录的日志，进行数据恢复的时候，没有恢复一模一样的数据出来。所以说，类似AOF这种较为复杂的基于命令日志/merge/回放的方式，比基于RDB每次持久化一份完整的数据快照文件的方式，更加脆弱一些，容易有bug。不过AOF就是为了避免rewrite过程导致的bug，因此每次rewrite并不是基于旧的指令日志进行merge的，而是基于当时内存中的数据进行指令的重新构建，这样健壮性会好很多</p>
+<h2 id="RDB和AOF的选择"><a href="#RDB和AOF的选择" class="headerlink" title="RDB和AOF的选择"></a>RDB和AOF的选择</h2><p>1、不要仅仅使用RDB，因为那样会导致你丢失很多数据<br>2、也不要仅仅使用AOF，因为那样有两个问题，第一，你通过AOF做冷备，没有RDB做冷备，来的恢复速度更快; 第二，RDB每次简单粗暴生成数据快照，更加健壮，可以避免AOF这种复杂的备份和恢复机制的bug<br>3、综合使用AOF和RDB两种持久化机制，用AOF来保证数据不丢失，作为数据恢复的第一选择; 用RDB来做不同程度的冷备，在AOF文件都丢失或损坏不可用的时候，还可以使用RDB来进行快速的数据恢复</p>
 
       
 
@@ -456,7 +480,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#高并发高可用复杂系统中的缓存架构有哪些东西？"><span class="toc-number">1.</span> <span class="toc-text">高并发高可用复杂系统中的缓存架构有哪些东西？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#小型电商商品详情页的架构"><span class="toc-number">2.</span> <span class="toc-text">小型电商商品详情页的架构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#大型电商网站的异步多级缓存构建-nginx数据本地化动态渲染的架构"><span class="toc-number">3.</span> <span class="toc-text">大型电商网站的异步多级缓存构建+nginx数据本地化动态渲染的架构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#能够支撑高并发-高可用-海量数据-备份恢复的redis的重要性"><span class="toc-number">4.</span> <span class="toc-text">能够支撑高并发+高可用+海量数据+备份恢复的redis的重要性</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#高并发高可用复杂系统中的缓存架构有哪些东西？"><span class="toc-number">1.</span> <span class="toc-text">高并发高可用复杂系统中的缓存架构有哪些东西？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#小型电商商品详情页的架构"><span class="toc-number">2.</span> <span class="toc-text">小型电商商品详情页的架构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#大型电商网站的异步多级缓存构建-nginx数据本地化动态渲染的架构"><span class="toc-number">3.</span> <span class="toc-text">大型电商网站的异步多级缓存构建+nginx数据本地化动态渲染的架构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#能够支撑高并发-高可用-海量数据-备份恢复的redis的重要性"><span class="toc-number">4.</span> <span class="toc-text">能够支撑高并发+高可用+海量数据+备份恢复的redis的重要性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#redis生产环境启动方案"><span class="toc-number">5.</span> <span class="toc-text">redis生产环境启动方案</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Redis持久化机制对于故障恢复的意义"><span class="toc-number">6.</span> <span class="toc-text">Redis持久化机制对于故障恢复的意义</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Redis-RDB和AOF两种持久化机制的原理"><span class="toc-number">7.</span> <span class="toc-text">Redis RDB和AOF两种持久化机制的原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#RDB和AOF两种持久化机制介绍"><span class="toc-number">7.1.</span> <span class="toc-text">RDB和AOF两种持久化机制介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RDB持久化机制的优点"><span class="toc-number">7.2.</span> <span class="toc-text">RDB持久化机制的优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RDB持久化的缺点"><span class="toc-number">7.3.</span> <span class="toc-text">RDB持久化的缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AOF持久化的优点"><span class="toc-number">7.4.</span> <span class="toc-text">AOF持久化的优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AOF持久化的缺点"><span class="toc-number">7.5.</span> <span class="toc-text">AOF持久化的缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RDB和AOF的选择"><span class="toc-number">7.6.</span> <span class="toc-text">RDB和AOF的选择</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -603,6 +627,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">NoSQL</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Redis</a>
