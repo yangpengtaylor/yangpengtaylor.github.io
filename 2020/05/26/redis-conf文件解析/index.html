@@ -6,16 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.datasheep.info">
-  <title>Archives | 数据杨的个人博客</title>
+  <title>redis.conf文件解析 | 数据杨的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="努力成长的大数据学习者">
-<meta property="og:type" content="website">
-<meta property="og:title" content="数据杨的个人博客">
-<meta property="og:url" content="http://www.datasheep.info/archives/index.html">
+  <meta name="description" content="redis.conf文件位置默认在redis根目录下通常将其拷贝出来单独执行，避免修改错误后没有原文件备份">
+<meta property="og:type" content="article">
+<meta property="og:title" content="redis.conf文件解析">
+<meta property="og:url" content="http://www.datasheep.info/2020/05/26/redis-conf%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/index.html">
 <meta property="og:site_name" content="数据杨的个人博客">
-<meta property="og:description" content="努力成长的大数据学习者">
+<meta property="og:description" content="redis.conf文件位置默认在redis根目录下通常将其拷贝出来单独执行，避免修改错误后没有原文件备份">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-26T08:56:45.000Z">
+<meta property="article:modified_time" content="2020-05-27T03:51:50.719Z">
 <meta property="article:author" content="Data Sheep">
+<meta property="article:tag" content="Redis">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="数据杨的个人博客" type="application/atom+xml">
@@ -161,150 +164,267 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-redis-conf文件解析" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/27/Redis%E5%A4%8D%E5%88%B6%E6%9C%BA%E5%88%B6/" class="archive-article-date">
-  	<time datetime="2020-05-27T03:34:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-27</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/27/Redis%E5%A4%8D%E5%88%B6%E6%9C%BA%E5%88%B6/">Redis复制机制</a>
+    <h1 class="article-title" itemprop="name">
+      redis.conf文件解析
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/26/Redis%E4%BA%8B%E5%8A%A1/" class="archive-article-date">
-  	<time datetime="2020-05-26T14:56:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/26/Redis%E4%BA%8B%E5%8A%A1/">Redis事务</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/26/Redis%E6%8C%81%E4%B9%85%E5%8C%96/" class="archive-article-date">
-  	<time datetime="2020-05-26T13:24:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/26/Redis%E6%8C%81%E4%B9%85%E5%8C%96/">Redis持久化</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/26/redis-conf%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/" class="archive-article-date">
+	      <!--显示阅读次数-->
+	      
+  	    <br/>
+  	    <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+  	     <span class="icon-sort"></span>
+  	     <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+  	        阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+  	     </span>
+  	    </a>
+	      
+        
+          <a href="/2020/05/26/redis-conf%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/" class="archive-article-date">
   	<time datetime="2020-05-26T08:56:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-26</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/26/redis-conf%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/">redis.conf文件解析</a>
-    </h1>
+          
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;color: grey">  字数统计: </span>
+        <!--这里样式可以自己定制-->
+        <span class="post-count" style="font-size: 16px;color: grey">2.7k字</span>
+      </span>
+    </span>
+    
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;color: grey">  阅读时长: </span>
+        <span class="post-count" style="font-size: 16px;color: grey">10分</span>
+      </span>
+    </span>
+</div>
+
+          
+        
+        </header>
+    
+    <!-- 目录内容 -->
+
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+          <span class="btn-bg"></span>
+          <span class="btn-text">文章导航</span>
+          </p>
+  <div id="toc-article" class="toc-article">
+      <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+    <strong class="toc-title">文章目录</strong>
+           <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#redis-conf文件位置"><span class="toc-number">1.</span> <span class="toc-text">redis.conf文件位置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Units单位"><span class="toc-number">2.</span> <span class="toc-text">Units单位</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Include包含"><span class="toc-number">3.</span> <span class="toc-text">Include包含</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#General"><span class="toc-number">4.</span> <span class="toc-text">General</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Snapshotting"><span class="toc-number">5.</span> <span class="toc-text">Snapshotting</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Replication复制"><span class="toc-number">6.</span> <span class="toc-text">Replication复制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Security安全"><span class="toc-number">7.</span> <span class="toc-text">Security安全</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Limits限制"><span class="toc-number">8.</span> <span class="toc-text">Limits限制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Append-only-mode"><span class="toc-number">9.</span> <span class="toc-text">Append only mode</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常用配置"><span class="toc-number">10.</span> <span class="toc-text">常用配置</span></a></li></ol>
+         </div>
+   <script type="text/javascript">
+  function showToc(){
+    var toc_article = document.getElementById("toc-article");
+    var show_toc_btn = document.getElementById("show-toc-btn");
+    toc_article.setAttribute("style","display:block");
+    show_toc_btn.setAttribute("style","display:none");
+    };
+  function showBtn(){
+    var toc_article = document.getElementById("toc-article");
+    var show_toc_btn = document.getElementById("show-toc-btn");
+    toc_article.setAttribute("style","display:none");
+    show_toc_btn.setAttribute("style","display:block");
+    };
+   </script>
+         
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="redis-conf文件位置"><a href="#redis-conf文件位置" class="headerlink" title="redis.conf文件位置"></a>redis.conf文件位置</h1><p>默认在redis根目录下<br>通常将其拷贝出来单独执行，避免修改错误后没有原文件备份</p>
+<a id="more"></a>
+
+<h1 id="Units单位"><a href="#Units单位" class="headerlink" title="Units单位"></a>Units单位</h1><p>1k =&gt; 1000 bytes<br>1kb =&gt; 1024 bytes<br>1m =&gt; 1000000 bytes<br>1mb =&gt; 1024<em>1024 bytes<br>1g =&gt; 1000000000 bytes<br>1gb =&gt; 1024</em>1024*1024 bytes<br>只支持bytes，不支持bit<br>对大小写不敏感</p>
+<h1 id="Include包含"><a href="#Include包含" class="headerlink" title="Include包含"></a>Include包含</h1><p>通过includes包含其他配置文件，redis.conf作为总阀</p>
+<h1 id="General"><a href="#General" class="headerlink" title="General"></a>General</h1><ul>
+<li>daemonize 是否开启redis作为守护进程</li>
+<li>pidfile 设置pid file位置</li>
+<li>port redis端口</li>
+<li>tcp-backlog 设置tcp的backlog，backlog是一个连接队列，backlog队列总和=未完成的三次握手队列+已经完成的三次握手队列，高并发环境下需要一个高backlog值来避免慢客户端连接问题；注意Linux内核会将这个值减小到/proc/sys/net/core/somaxconn的值，所以需要确认增大somaxconn和tcp_max_syn_backlog两个值来达到想要的效果</li>
+<li>timeout 客户端连接超时时间</li>
+<li>bind 绑定的IP</li>
+<li>tcp-keepalive 单位为秒，设置成0将不会进行keepalive检测</li>
+<li>loglevel 日志级别</li>
+<li>logfile 指定日志文件名</li>
+<li>syslog-enabled 是否把日志输出到syslog中</li>
+<li>syslog-ident 指定syslog中的日志标志</li>
+<li>syslog-facility 指定syslog设备，值域是USER或LOCAL0-LOCAL7</li>
+<li>databases 默认数据库数量</li>
+</ul>
+<h1 id="Snapshotting"><a href="#Snapshotting" class="headerlink" title="Snapshotting"></a>Snapshotting</h1><ul>
+<li>save 秒钟 写操作次数，RDB是整个内存压缩过的Snapshot，RDB的数据结构可以配置复合的快照触发条件<ul>
+<li>默认是<strong>1分钟内改了1万次，或5分钟内改了10次，或15分钟内改了1次</strong>。</li>
+<li>禁用RDB持久化策略只需不设置任何save指令或给save传入一个空字符串参数</li>
+</ul>
+</li>
+<li>stop-writes-on-bgsave-error 配置成no表示不在乎数据不一致或有其他手段发现和控制</li>
+<li>rdbcompression 对于存储到磁盘中的快照，设置是否采用压缩，开启压缩默认采用LZF算法</li>
+<li>rdbchecksum 让redis使用crc64算法进行数据校验，会增大10%的资源消耗</li>
+<li>dbfilename 指定本地数据库文件名</li>
+<li>dir 指定本地数据库目录</li>
+</ul>
+<h1 id="Replication复制"><a href="#Replication复制" class="headerlink" title="Replication复制"></a>Replication复制</h1><p>slaveof <masterip> <masterport> 设置当本机为slave服务时，设置master服务的IP地址及端口，在Redis启动时，它会自动从master进行数据同步</p>
+<h1 id="Security安全"><a href="#Security安全" class="headerlink" title="Security安全"></a>Security安全</h1><p>访问密码的查看、设置和取消</p>
+<h1 id="Limits限制"><a href="#Limits限制" class="headerlink" title="Limits限制"></a>Limits限制</h1><ul>
+<li>maxclients 同时可与多少个客户端连接，默认10000，当你无法设置进程文件句柄限制时，redis会设置为当前的文件句柄限制值减去32，因为redis会为自身内部处理逻辑留一些句柄出来。如果达到了此限制，redis则会拒绝新的连接请求，并且向这些连接请求方发出“max number of clients reached”以作回应</li>
+<li>maxmemory redis可以使用的内存量，达到上限时，redis会试图移除内部数据，移除规则通过maxmemory-policy配置，如果无法根据移除规则移除数据，或设置了不允许移除，针对那些需要申请内存的指令返回错误信息，比如SET、LPUSH等，对于无内存申请的指令，仍然会正常响应，比如GET等。如果你的redis是主redis（说明你的redis有从redis），那么在设置内存使用上限时，需要在系统中留出一些内存空间给同步队列缓存，只有在你设置的是“不移除”的情况下，才不用考虑这个因素</li>
+<li>maxmemory-policy <ul>
+<li>volatile-lru：使用LRU算法移除key，只对设置了过期时间的键</li>
+<li>allkeys-lru：使用LRU算法移除key</li>
+<li>volatile-random：在过期集合中移除随机的key，只对设置了过期时间的键</li>
+<li>allkeys-random：移除随机的key</li>
+<li>volatile-ttl：移除那些TTL值最小的key，即那些最近要过期的key</li>
+<li>noeviction：不进行移除。针对写操作，只是返回错误信息</li>
+</ul>
+</li>
+<li>maxmemory-samples 设置样本数量，LRU算法和最小TTL算法都并非是精确的算法，而是估算值，所以你可以设置样本的大小，<br>redis默认会检查这么多个key并选择其中LRU的那个</li>
+</ul>
+<h1 id="Append-only-mode"><a href="#Append-only-mode" class="headerlink" title="Append only mode"></a>Append only mode</h1><ul>
+<li>appendonly </li>
+<li>appendfilename</li>
+<li>appendsync <ul>
+<li>always：同步持久化 每次发生数据变更后会被立即记录到磁盘 性能较差但数据完整性好</li>
+<li>everysec：出厂默认推荐，异步操作，每秒记录 如果一秒内宕机会有数据丢失</li>
+<li>no</li>
+</ul>
+</li>
+<li>no-appendsync-on-rewrite 重写时是否可以运用appendsync，默认no，保证数据安全性 </li>
+<li>auto-aof-rewrite-min-size 设置重写的基准值</li>
+<li>auto-aof-rewrite-percentage 设置重写的基准值</li>
+</ul>
+<h1 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h1><p>参数说明<br>redis.conf 配置项说明如下：</p>
+<ol>
+<li><p>Redis默认不是以守护进程的方式运行，可以通过该配置项修改，使用yes启用守护进程<br>daemonize no</p>
+</li>
+<li><p>当Redis以守护进程方式运行时，Redis默认会把pid写入/var/run/redis.pid文件，可以通过pidfile指定<br>pidfile /var/run/redis.pid</p>
+</li>
+<li><p>指定Redis监听端口，默认端口为6379，作者在自己的一篇博文中解释了为什么选用6379作为默认端口，因为6379在手机按键上MERZ对应的号码，而MERZ取自意大利歌女Alessia Merz的名字<br>port 6379</p>
+</li>
+<li><p>绑定的主机地址<br>bind 127.0.0.1</p>
+</li>
+</ol>
+<p>5.当 客户端闲置多长时间后关闭连接，如果指定为0，表示关闭该功能<br>  timeout 300</p>
+<ol start="6">
+<li><p>指定日志记录级别，Redis总共支持四个级别：debug、verbose、notice、warning，默认为verbose<br>loglevel verbose</p>
+</li>
+<li><p>日志记录方式，默认为标准输出，如果配置Redis为守护进程方式运行，而这里又配置为日志记录方式为标准输出，则日志将会发送给/dev/null<br>logfile stdout</p>
+</li>
+<li><p>设置数据库的数量，默认数据库为0，可以使用SELECT <dbid>命令在连接上指定数据库id<br>databases 16</p>
+</li>
+<li><p>指定在多长时间内，有多少次更新操作，就将数据同步到数据文件，可以多个条件配合<br>save <seconds> <changes><br>Redis默认配置文件中提供了三个条件：<br>save 900 1<br>save 300 10<br>save 60 10000<br>分别表示900秒（15分钟）内有1个更改，300秒（5分钟）内有10个更改以及60秒内有10000个更改。</p>
+</li>
+<li><p>指定存储至本地数据库时是否压缩数据，默认为yes，Redis采用LZF压缩，如果为了节省CPU时间，可以关闭该选项，但会导致数据库文件变的巨大<br>rdbcompression yes</p>
+</li>
+<li><p>指定本地数据库文件名，默认值为dump.rdb<br>dbfilename dump.rdb</p>
+</li>
+<li><p>指定本地数据库存放目录<br>dir ./</p>
+</li>
+<li><p>设置当本机为slave服务时，设置master服务的IP地址及端口，在Redis启动时，它会自动从master进行数据同步<br>slaveof <masterip> <masterport></p>
+</li>
+<li><p>当master服务设置了密码保护时，slave服务连接master的密码<br>masterauth <master-password></p>
+</li>
+<li><p>设置Redis连接密码，如果配置了连接密码，客户端在连接Redis时需要通过AUTH <password>命令提供密码，默认关闭<br>requirepass foobared</p>
+</li>
+<li><p>设置同一时间最大客户端连接数，默认无限制，Redis可以同时打开的客户端连接数为Redis进程可以打开的最大文件描述符数，如果设置 maxclients 0，表示不作限制。当客户端连接数到达限制时，Redis会关闭新的连接并向客户端返回max number of clients reached错误信息<br>maxclients 128</p>
+</li>
+<li><p>指定Redis最大内存限制，Redis在启动时会把数据加载到内存中，达到最大内存后，Redis会先尝试清除已到期或即将到期的Key，当此方法处理 后，仍然到达最大内存设置，将无法再进行写入操作，但仍然可以进行读取操作。Redis新的vm机制，会把Key存放内存，Value会存放在swap区<br>maxmemory <bytes></p>
+</li>
+<li><p>指定是否在每次更新操作后进行日志记录，Redis在默认情况下是异步的把数据写入磁盘，如果不开启，可能会在断电时导致一段时间内的数据丢失。因为 redis本身同步数据文件是按上面save条件来同步的，所以有的数据会在一段时间内只存在于内存中。默认为no<br>appendonly no</p>
+</li>
+<li><p>指定更新日志文件名，默认为appendonly.aof<br>appendfilename appendonly.aof</p>
+</li>
+<li><p>指定更新日志条件，共有3个可选值：<br>no：表示等操作系统进行数据缓存同步到磁盘（快）<br>always：表示每次更新操作后手动调用fsync()将数据写到磁盘（慢，安全）<br>everysec：表示每秒同步一次（折衷，默认值）<br>appendfsync everysec</p>
+</li>
+<li><p>指定是否启用虚拟内存机制，默认值为no，简单的介绍一下，VM机制将数据分页存放，由Redis将访问量较少的页即冷数据swap到磁盘上，访问多的页面由磁盘自动换出到内存中（在后面的文章我会仔细分析Redis的VM机制）<br>vm-enabled no</p>
+</li>
+<li><p>虚拟内存文件路径，默认值为/tmp/redis.swap，不可多个Redis实例共享<br>vm-swap-file /tmp/redis.swap</p>
+</li>
+<li><p>将所有大于vm-max-memory的数据存入虚拟内存,无论vm-max-memory设置多小,所有索引数据都是内存存储的(Redis的索引数据 就是keys),也就是说,当vm-max-memory设置为0的时候,其实是所有value都存在于磁盘。默认值为0<br>vm-max-memory 0</p>
+</li>
+<li><p>Redis swap文件分成了很多的page，一个对象可以保存在多个page上面，但一个page上不能被多个对象共享，vm-page-size是要根据存储的 数据大小来设定的，作者建议如果存储很多小对象，page大小最好设置为32或者64bytes；如果存储很大大对象，则可以使用更大的page，如果不 确定，就使用默认值<br>vm-page-size 32</p>
+</li>
+<li><p>设置swap文件中的page数量，由于页表（一种表示页面空闲或使用的bitmap）是在放在内存中的，，在磁盘上每8个pages将消耗1byte的内存。<br>vm-pages 134217728</p>
+</li>
+<li><p>设置访问swap文件的线程数,最好不要超过机器的核数,如果设置为0,那么所有对swap文件的操作都是串行的，可能会造成比较长时间的延迟。默认值为4<br>vm-max-threads 4</p>
+</li>
+<li><p>设置在向客户端应答时，是否把较小的包合并为一个包发送，默认为开启<br>glueoutputbuf yes</p>
+</li>
+<li><p>指定在超过一定的数量或者最大的元素超过某一临界值时，采用一种特殊的哈希算法<br>hash-max-zipmap-entries 64<br>hash-max-zipmap-value 512</p>
+</li>
+<li><p>指定是否激活重置哈希，默认为开启（后面在介绍Redis的哈希算法时具体介绍）<br>activerehashing yes</p>
+</li>
+<li><p>指定包含其它的配置文件，可以在同一主机上多个Redis实例之间使用同一份配置文件，而同时各个实例又拥有自己的特定配置文件<br>include /path/to/local.conf</p>
+</li>
+</ol>
+
+      
+
+       
+         <div class="essayending">
+           <div>
+            <div style="text-align:center;color: #ccc;font-size:22px;">
+            <br/>
+            <br/>
+ -------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------
+            <br/>
+            <br/>
+             <br/>
+             <br/>
+            </div>
+           </div>
+         </div>
+         
+       
   
 
-        <div class="article-info info-on-right">
-          
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -316,250 +436,150 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.datasheep.info/2020/05/26/redis-conf%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/26/Hive%E7%A9%BA%E5%80%BC%E4%B8%8E:N%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-05-26T02:31:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-26</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/05/26/Redis%E6%8C%81%E4%B9%85%E5%8C%96/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Redis持久化
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/05/26/Hive%E7%A9%BA%E5%80%BC%E4%B8%8E:N%E9%97%AE%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hive空值与&#39;/N&#39;问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/26/Hive%E7%A9%BA%E5%80%BC%E4%B8%8E:N%E9%97%AE%E9%A2%98/">Hive空值与&#39;/N&#39;问题</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Hive 报错</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#redis-conf文件位置"><span class="toc-number">1.</span> <span class="toc-text">redis.conf文件位置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Units单位"><span class="toc-number">2.</span> <span class="toc-text">Units单位</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Include包含"><span class="toc-number">3.</span> <span class="toc-text">Include包含</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#General"><span class="toc-number">4.</span> <span class="toc-text">General</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Snapshotting"><span class="toc-number">5.</span> <span class="toc-text">Snapshotting</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Replication复制"><span class="toc-number">6.</span> <span class="toc-text">Replication复制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Security安全"><span class="toc-number">7.</span> <span class="toc-text">Security安全</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Limits限制"><span class="toc-number">8.</span> <span class="toc-text">Limits限制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Append-only-mode"><span class="toc-number">9.</span> <span class="toc-text">Append only mode</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常用配置"><span class="toc-number">10.</span> <span class="toc-text">常用配置</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/25/DAMA%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-05-25T00:46:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/25/DAMA%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E6%8C%87%E5%8D%97%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">DAMA数据管理知识体系指南阅读笔记</a>
-    </h1>
+        
+    </div>
+</aside>
+
+
+
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DAMA数据管理 阅读笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
+      <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC81MDIxMC8yNjcwMA">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/24/NoSQL%E6%A6%82%E8%BF%B0/" class="archive-article-date">
-  	<time datetime="2020-05-24T03:58:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/24/NoSQL%E6%A6%82%E8%BF%B0/">NoSQL概述</a>
-    </h1>
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+
+      
+
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">NoSQL</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/24/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2020-05-24T00:45:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/24/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/">Redis学习笔记（三）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/22/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2020-05-22T13:17:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/22/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/">Redis学习笔记（二）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/21/%E4%BA%BF%E7%BA%A7%E6%B5%81%E9%87%8F%E7%94%B5%E5%95%86%E8%AF%A6%E6%83%85%E9%A1%B5%E7%B3%BB%E7%BB%9F%E5%AE%9E%E6%88%98/" class="archive-article-date">
-  	<time datetime="2020-05-21T14:57:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/21/%E4%BA%BF%E7%BA%A7%E6%B5%81%E9%87%8F%E7%94%B5%E5%95%86%E8%AF%A6%E6%83%85%E9%A1%B5%E7%B3%BB%E7%BB%9F%E5%AE%9E%E6%88%98/">亿级流量电商详情页系统实战</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">项目</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -594,8 +614,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

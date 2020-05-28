@@ -72,7 +72,7 @@ var _hmt = _hmt || [];
 			</ul>
 		</nav>
 		<nav>
-   			 总文章数 7
+   			 总文章数 11
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -162,6 +162,590 @@ var _hmt = _hmt || [];
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-Redis复制机制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/27/Redis%E5%A4%8D%E5%88%B6%E6%9C%BA%E5%88%B6/">Redis复制机制</a>
+    </h1>
+  
+
+	      <!--显示阅读次数-->
+	      
+        
+          <a href="/2020/05/27/Redis%E5%A4%8D%E5%88%B6%E6%9C%BA%E5%88%B6/" class="archive-article-date">
+  	<time datetime="2020-05-27T03:34:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-27</time>
+</a>
+          
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;color: grey">  字数统计: </span>
+        <!--这里样式可以自己定制-->
+        <span class="post-count" style="font-size: 16px;color: grey">746字</span>
+      </span>
+    </span>
+    
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;color: grey">  阅读时长: </span>
+        <span class="post-count" style="font-size: 16px;color: grey">2分</span>
+      </span>
+    </span>
+</div>
+
+          
+        
+        </header>
+    
+    <!-- 目录内容 -->
+   
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Redis复制机制"><a href="#Redis复制机制" class="headerlink" title="Redis复制机制"></a>Redis复制机制</h1><p>也就是我们所说的主从复制，主机数据更新后根据配置和策略，自动同步到备机的master/slaver机制，Master以写为主，Slave以读为主</p>
+<p>常用于：读写分离、容灾恢复</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>1、配从(库)不配主(库)</p>
+<p>2、从库配置：slaveof 主库IP 主库端口</p>
+<ul>
+<li>每次与master断开之后，都需要重新连接，除非你配置进redis.conf文件</li>
+<li>info replication</li>
+</ul>
+<p>3、修改配置文件细节操作</p>
+<ul>
+<li>拷贝多个redis.conf文件</li>
+<li>开启daemonize yes</li>
+<li>pid文件名字</li>
+<li>指定端口</li>
+<li>log文件名字</li>
+<li>dump.rdb名字</li>
+</ul>
+<p>4、常用3招</p>
+<ul>
+<li>一主二仆<ul>
+<li>Init</li>
+<li>一个Master两个Slave</li>
+<li>日志查看<ul>
+<li>主机日志</li>
+<li>备机日志</li>
+<li>info replication</li>
+</ul>
+</li>
+<li>主从问题演示<ul>
+<li>slaveof 主库IP 主库端口</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>薪火相传<ul>
+<li>上一个Slave可以是下一个slave的Master，Slave同样可以接收其他slaves的连接和同步请求，那么该slave作为了链条中下一个的master,可以有效减轻master的写压力</li>
+<li>中途变更转向:会清除之前的数据，重新建立拷贝最新的</li>
+<li>slaveof 新主库IP 新主库端口</li>
+</ul>
+</li>
+<li>反客为主<ul>
+<li>SLAVEOF no one 使当前数据库停止与其他数据库的同步，转成主数据库</li>
+</ul>
+</li>
+</ul>
+<h2 id="复制原理"><a href="#复制原理" class="headerlink" title="复制原理"></a>复制原理</h2><p>1、slave启动成功连接到master后会发送一个sync命令<br>2、Master接到命令启动后台的存盘进程，同时收集所有接收到的用于修改数据集命令，在后台进程执行完毕之后，master将传送整个数据文件到slave,以完成一次完全同步<br>3、全量复制：而slave服务在接收到数据库文件数据后，将其存盘并加载到内存中。<br>4、增量复制：Master继续将新的所有收集到的修改命令依次传给slave,完成同步<br>5、但是只要是重新连接master,一次完全同步（全量复制)将被自动执行</p>
+<h2 id="哨兵模式-sentinel"><a href="#哨兵模式-sentinel" class="headerlink" title="哨兵模式(sentinel)"></a>哨兵模式(sentinel)</h2><p>反客为主的自动版，能够后台监控主机是否故障，如果故障了根据投票数自动将从库转换为主库</p>
+<p>使用步骤：</p>
+<ul>
+<li>调整结构，6379带着80、81</li>
+<li>自定义的/myredis目录下新建sentinel.conf文件，名字绝不能错</li>
+<li>配置哨兵,填写内容<ul>
+<li>sentinel monitor 被监控数据库名字(自己起名字) 127.0.0.1 6379 1</li>
+<li>上面最后一个数字1，表示主机挂掉后salve投票看让谁接替成为主机，得票数多少后成为主机</li>
+</ul>
+</li>
+<li>启动哨兵<ul>
+<li>redis-sentinel /myredis/sentinel.conf </li>
+<li>上述目录依照各自的实际情况配置，可能目录不同</li>
+</ul>
+</li>
+<li>原有的master挂了<ul>
+<li>投票新选</li>
+<li>重新主从继续开工,info replication查查看</li>
+<li>问题：如果之前的master重启回来，会不会双master冲突？<ul>
+<li>不会，重启后被哨兵监控到会作为slave加入整个集群</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>一组sentinel能同时监控多个Master</li>
+</ul>
+<h2 id="复制的缺点"><a href="#复制的缺点" class="headerlink" title="复制的缺点"></a>复制的缺点</h2><p>复制延迟</p>
+
+      
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/27/Redis%E5%A4%8D%E5%88%B6%E6%9C%BA%E5%88%B6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Redis事务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/26/Redis%E4%BA%8B%E5%8A%A1/">Redis事务</a>
+    </h1>
+  
+
+	      <!--显示阅读次数-->
+	      
+        
+          <a href="/2020/05/26/Redis%E4%BA%8B%E5%8A%A1/" class="archive-article-date">
+  	<time datetime="2020-05-26T14:56:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-26</time>
+</a>
+          
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;color: grey">  字数统计: </span>
+        <!--这里样式可以自己定制-->
+        <span class="post-count" style="font-size: 16px;color: grey">947字</span>
+      </span>
+    </span>
+    
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;color: grey">  阅读时长: </span>
+        <span class="post-count" style="font-size: 16px;color: grey">3分</span>
+      </span>
+    </span>
+</div>
+
+          
+        
+        </header>
+    
+    <!-- 目录内容 -->
+   
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Redis事务"><a href="#Redis事务" class="headerlink" title="Redis事务"></a>Redis事务</h1><p>Redis事务可以一次执行多个命令，本质是一组命令的集合。一个事务中的所有命令都会序列化，按顺序地串行化执行而不会被其它命令插入，不许加塞</p>
+<p>常用于在一个队列中，一次性、顺序性、排他性的执行一系列命令</p>
+<h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><p>1、常用命令</p>
+<ul>
+<li>MULTI 标记事务块开始</li>
+<li>EXEC 执行事务块内所有命令</li>
+<li>DISCARD 取消事务，放弃执行事务块内所有命令</li>
+<li>UNWATCH 取消watch命令对所有key的监控</li>
+<li>WATCH key[key…] 监控一个或多个key，如果在事务执行之前key被其他命令改动，事务将被打断</li>
+</ul>
+<p>2、全体连坐<br>一个事务中有一条不存在命令，整个事务被放弃<br>如何<code>getset</code>命令不存在，却在事务中使用</p>
+<p>3、冤头债主<br>一个事务中出现错误命令，该命令不执行，其他命令正常执行<br>如数据k1 aa，这是事务中的<code>incr k1</code>命令不会执行，其他命令会正常执行</p>
+<p>4、watch监控</p>
+<ul>
+<li><p>悲观锁/乐观锁/CAS(Check And Set)</p>
+<ul>
+<li>悲观锁 每次去拿数据都会认为别人会修改，所以每次都会上锁，如传统关系数据库中的锁机制，表锁、行锁、读锁、写锁等</li>
+<li>乐观锁 每次去拿数据都认为别人不会修改，所以不会上锁，但在更新时会判断在此期间有没有别人更新过这个数据，可以使用版本号等机制，适用于多读的应用类型<ul>
+<li>提交版本必须大于记录当前版本才能执行更新</li>
+</ul>
+</li>
+<li>CAS 监视key是否被修改过4</li>
+</ul>
+</li>
+<li><p>初始化信用卡可用余额和欠额</p>
+<ul>
+<li>无加塞篡改，先监控再开启multi，保证两笔金额变动在同一个事务内</li>
+<li>有加塞篡改，监控了key，如果key被修改了，后面一个事务的执行失效</li>
+</ul>
+</li>
+<li><p>unwatch一旦执行了，exec之前加的监控锁都会被取消掉了</p>
+</li>
+<li><p>小结</p>
+<ul>
+<li>Watch指令，类似乐观锁，事务提交时，如果Key的值已被别的客户端改变，比如某个list已被别的客户端push/pop过了，整个事务队列都不会被执行</li>
+<li>通过WATCH命令在事务执行之前监控了多个Keys，倘若在WATCH之后有任何Key的值发生了变化，EXEC命令执行的事务都将被放弃，同时返回Nullmulti-bulk应答以通知调用者事务执行失败</li>
+</ul>
+</li>
+</ul>
+<h2 id="阶段"><a href="#阶段" class="headerlink" title="阶段"></a>阶段</h2><ul>
+<li>开启：以MULTI开始一个事务</li>
+<li>入队：将多个命令入队到事务中，接到这些命令并不会立即执行，而是放到等待执行的事务队列里面</li>
+<li>执行：由EXEC命令触发事务</li>
+</ul>
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
+<li>单独的隔离操作：事务中的所有命令都会序列化、按顺序地执行。事务在执行的过程中，不会被其他客户端发送来的命令请求所打断。</li>
+<li>没有隔离级别的概念：队列中的命令没有提交之前都不会实际的被执行，因为事务提交前任何指令都不会被实际执行，也就不存在”事务内的查询要看到事务里的更新，在事务外查询不能看到”这个让人万分头痛的问题</li>
+<li>不保证原子性：redis同一个事务中如果有一条命令执行失败，其后的命令仍然会被执行，没有回滚，部分支持事务</li>
+</ul>
+<h1 id="Redis发布-订阅"><a href="#Redis发布-订阅" class="headerlink" title="Redis发布/订阅"></a>Redis发布/订阅</h1><p>进程间的一种消息通信模式：发送者（pub）发送消息，订阅者（sub）接收消息<br><strong>先订阅后发布</strong>才能收到消息</p>
+
+      
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/26/Redis%E4%BA%8B%E5%8A%A1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Redis持久化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/26/Redis%E6%8C%81%E4%B9%85%E5%8C%96/">Redis持久化</a>
+    </h1>
+  
+
+	      <!--显示阅读次数-->
+	      
+        
+          <a href="/2020/05/26/Redis%E6%8C%81%E4%B9%85%E5%8C%96/" class="archive-article-date">
+  	<time datetime="2020-05-26T13:24:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-26</time>
+</a>
+          
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;color: grey">  字数统计: </span>
+        <!--这里样式可以自己定制-->
+        <span class="post-count" style="font-size: 16px;color: grey">1.8k字</span>
+      </span>
+    </span>
+    
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;color: grey">  阅读时长: </span>
+        <span class="post-count" style="font-size: 16px;color: grey">6分</span>
+      </span>
+    </span>
+</div>
+
+          
+        
+        </header>
+    
+    <!-- 目录内容 -->
+   
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="RDB（Redis-DataBase）"><a href="#RDB（Redis-DataBase）" class="headerlink" title="RDB（Redis DataBase）"></a>RDB（Redis DataBase）</h1><p>RDB是在指定的时间间隔内将内存中的数据集快照写入磁盘，也就是行话讲的Snapshot快照，它恢复数据时是将快照文件直接读到内存里</p>
+<p>Redis会单独创建（fork）一个子进程来进行持久化，会先将数据写入到一个临时文件中，待持久化过程都结束了，再用这个临时文件替换上次持久化好的文件。整个过程中，主进程是不进行任何IO操作的，这就确保了极高的性能，如果需要进行大规模数据的恢复，且对于数据恢复的完整性不是非常敏感，那RDB方式要比AOF方式更加的高效。RDB的缺点是最后一次持久化后的数据可能丢失。</p>
+<p>rdb 保存的是dump.rdb文件</p>
+<h2 id="fork"><a href="#fork" class="headerlink" title="fork"></a>fork</h2><p>fork的作用是复制一个与当前进程一样的进程。新进程的所有数据（变量、环境变量、程序计数器等）数值都和原进程一致，但是是一个全新的进程，并作为原进程的子进程</p>
+<h2 id="配置位置"><a href="#配置位置" class="headerlink" title="配置位置"></a>配置位置</h2><p><img src="/assert/redis_save.png" alt="avator"></p>
+<h2 id="如何触发RDB快照"><a href="#如何触发RDB快照" class="headerlink" title="如何触发RDB快照"></a>如何触发RDB快照</h2><p>1、配置文件中的默认快照配置，一般是冷拷贝后再使用，从主服务器拷贝到备用服务器cp dump.rdb dump_new.rdb</p>
+<p>2、命令save或者bgsave </p>
+<ul>
+<li>save时只管保存，其他不管全部阻塞</li>
+<li>bgsave redis会在后台异步进行快照操作，快照同时还可以响应客户端请求，通过lastsave命令获取最后一次成功执行快照的时间</li>
+</ul>
+<p>3、执行flushall命令，也会产生dump.rdb文件，但是文件是空的，无意义</p>
+<h2 id="如何恢复数据"><a href="#如何恢复数据" class="headerlink" title="如何恢复数据"></a>如何恢复数据</h2><p>将备份文件 (dump.rdb) 移动到 redis 安装目录并启动服务即可<br>config get dir 可以获取目录</p>
+<h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><p>适合大规模数据恢复<br>对数据完整性和一致性要求不高</p>
+<h2 id="劣势"><a href="#劣势" class="headerlink" title="劣势"></a>劣势</h2><p>在一定间隔时间做一次备份，所以如果redis意外down掉的话，就会丢失最后一次快照后的所有修改<br>fork的时候，内存中的数据被克隆了一份，大致2倍的膨胀性需要考虑</p>
+<h2 id="如何停止RDB"><a href="#如何停止RDB" class="headerlink" title="如何停止RDB"></a>如何停止RDB</h2><p>动态所有停止RDB保存规则的方法：redis-cli config set save “”</p>
+<h2 id="小总结"><a href="#小总结" class="headerlink" title="小总结"></a>小总结</h2><p><img src="/assert/redis_rdb.png" alt="avator"></p>
+<h1 id="AOF（Append-Only-File）"><a href="#AOF（Append-Only-File）" class="headerlink" title="AOF（Append Only File）"></a>AOF（Append Only File）</h1><p><strong>AOF是以日志的形式来记录每个写操作</strong>，将Redis执行过的所有写指令记录下来(读操作不记录)，只许追加文件但不可以改写文件，redis启动之初会读取该文件重新构建数据，换言之，redis重启的话就根据日志文件的内容将写指令从前到后执行一次以完成数据的恢复工作<br>AOF保存的是appendonly.aof文件</p>
+<h2 id="配置位置-1"><a href="#配置位置-1" class="headerlink" title="配置位置"></a>配置位置</h2><p>append only mode</p>
+<h2 id="AOF启动-修复-恢复"><a href="#AOF启动-修复-恢复" class="headerlink" title="AOF启动/修复/恢复"></a>AOF启动/修复/恢复</h2><ul>
+<li>正常恢复<ul>
+<li>启动：设置yes,修改默认的appendonly no，改为yes</li>
+<li>将有数据的aof文件复制一份保存到对应目录(config get dir)</li>
+<li>恢复：重启redis然后重新加载</li>
+</ul>
+</li>
+<li>异常恢复<ul>
+<li>启动：设置yes,修改默认的appendonly no，改为yes</li>
+<li>备份被写坏的AOF文件</li>
+<li>修复：redis-check-aof –fix进行修复</li>
+<li>恢复：重启redis然后重新加载</li>
+</ul>
+</li>
+</ul>
+<h2 id="rewrite"><a href="#rewrite" class="headerlink" title="rewrite"></a>rewrite</h2><p>AOF采用文件追加方式，文件会越来越大为避免出现此种情况，新增了重写机制,当AOF文件的大小超过所设定的阈值时，Redis就会启动AOF文件的内容压缩，只保留可以恢复数据的最小指令集.可以使用命令bgrewriteaof</p>
+<p>重写原理：<br>AOF文件持续增长而过大时，会fork出一条新进程来将文件重写(也是先写临时文件最后再rename)，遍历新进程的内存中数据，每条记录有一条的Set语句。重写aof文件的操作，并没有读取旧的aof文件，而是将整个内存中的数据库内容用命令的方式重写了一个新的aof文件，这点和快照有点类似</p>
+<p>触发机制：<br><strong>Redis会记录上次重写时的AOF大小，默认配置是当AOF文件大小是上次rewrite后大小的一倍且文件大于64M时触发</strong></p>
+<h2 id="优势-1"><a href="#优势-1" class="headerlink" title="优势"></a>优势</h2><ul>
+<li>每修改同步：appendfsync always   同步持久化 每次发生数据变更会被立即记录到磁盘  性能较差但数据完整性比较好</li>
+<li>每秒同步：appendfsync everysec    异步操作，每秒记录   如果一秒内宕机，有数据丢失</li>
+<li>不同步：appendfsync no   从不同步</li>
+</ul>
+<h2 id="劣势-1"><a href="#劣势-1" class="headerlink" title="劣势"></a>劣势</h2><ul>
+<li>相同数据集的数据而言aof文件要远大于rdb文件，恢复速度慢于rdb</li>
+<li>aof运行效率要慢于rdb,每秒同步策略效率较好，不同步效率和rdb相同</li>
+</ul>
+<h2 id="小总结-1"><a href="#小总结-1" class="headerlink" title="小总结"></a>小总结</h2><p><img src="/assert/redis_aof.png" alt="avator"></p>
+<h1 id="如何选择RDB和AOF"><a href="#如何选择RDB和AOF" class="headerlink" title="如何选择RDB和AOF"></a>如何选择RDB和AOF</h1><p>RDB持久化方式能够在指定的时间间隔能对你的数据进行快照存储</p>
+<p>AOF持久化方式记录每次对服务器写的操作,当服务器重启的时候会重新执行这些命令来恢复原始的数据,AOF命令以redis协议追加保存每次写的操作到文件末尾，Redis还能对AOF文件进行后台重写,使得AOF文件的体积不至于过大</p>
+<p>只做缓存：如果你只希望你的数据在服务器运行的时候存在,你也可以不使用任何持久化方式</p>
+<p>同时开启RDB和AOF：<br>在这种情况下,当redis重启的时候会优先载入AOF文件来恢复原始的数据,因为在通常情况下AOF文件保存的数据集要比RDB文件保存的数据集要完整<br>RDB的数据不实时，同时使用两者时服务器重启也只会找AOF文件。那要不要只使用AOF呢？建议不要，因为RDB更适合用于备份数据库(AOF在不断变化不好备份)，快速重启，而且不会有AOF可能潜在的bug，留着作为一个万一的手段</p>
+<p>性能建议：<br>因为RDB文件只用作后备用途，建议只在Slave上持久化RDB文件，而且只要15分钟备份一次就够了，只保留save 900 1这条规则</p>
+<p>如果Enalbe AOF，好处是在最恶劣情况下也只会丢失不超过两秒数据，启动脚本较简单只load自己的AOF文件就可以了。代价一是带来了持续的IO，二是AOF rewrite的最后将rewrite过程中产生的新数据写到新文件造成的阻塞几乎是不可避免的。只要硬盘许可，应该尽量减少AOF rewrite的频率，AOF重写的基础大小默认值64M太小了，可以设到5G以上。默认超过原大小100%大小时重写可以改到适当的数值</p>
+<p>如果不Enable AOF ，仅靠Master-Slave Replication实现高可用性也可以。能省掉一大笔IO也减少了rewrite时带来的系统波动。代价是如果Master/Slave同时倒掉，会丢失十几分钟的数据，启动脚本也要比较两个Master/Slave中的RDB文件，载入较新的那个</p>
+
+      
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/26/Redis%E6%8C%81%E4%B9%85%E5%8C%96/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-redis-conf文件解析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/26/redis-conf%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/">redis.conf文件解析</a>
+    </h1>
+  
+
+	      <!--显示阅读次数-->
+	      
+        
+          <a href="/2020/05/26/redis-conf%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/" class="archive-article-date">
+  	<time datetime="2020-05-26T08:56:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-26</time>
+</a>
+          
+          <div style="margin-top:10px;">
+    <span class="post-time">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-keyboard-o"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;color: grey">  字数统计: </span>
+        <!--这里样式可以自己定制-->
+        <span class="post-count" style="font-size: 16px;color: grey">2.7k字</span>
+      </span>
+    </span>
+    
+    <span class="post-time">
+      &nbsp; | &nbsp;
+      <span class="post-meta-item-icon">
+        <i class="fa fa-hourglass-half"></i>
+        <span class="post-meta-item-text" style="font-size: 16px;color: grey">  阅读时长: </span>
+        <span class="post-count" style="font-size: 16px;color: grey">10分</span>
+      </span>
+    </span>
+</div>
+
+          
+        
+        </header>
+    
+    <!-- 目录内容 -->
+   
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="redis-conf文件位置"><a href="#redis-conf文件位置" class="headerlink" title="redis.conf文件位置"></a>redis.conf文件位置</h1><p>默认在redis根目录下<br>通常将其拷贝出来单独执行，避免修改错误后没有原文件备份</p>
+        
+          <a class="article-more-a" href="/2020/05/26/redis-conf%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/#more">more >></a>
+        
+      
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/26/redis-conf%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-Hive空值与:N问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -291,7 +875,7 @@ var _hmt = _hmt || [];
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="font-size: 16px;color: grey">  字数统计: </span>
         <!--这里样式可以自己定制-->
-        <span class="post-count" style="font-size: 16px;color: grey">517字</span>
+        <span class="post-count" style="font-size: 16px;color: grey">888字</span>
       </span>
     </span>
     
@@ -300,7 +884,7 @@ var _hmt = _hmt || [];
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="font-size: 16px;color: grey">  阅读时长: </span>
-        <span class="post-count" style="font-size: 16px;color: grey">1分</span>
+        <span class="post-count" style="font-size: 16px;color: grey">2分</span>
       </span>
     </span>
 </div>
@@ -790,114 +1374,10 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-Redis学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/21/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Redis学习笔记</a>
-    </h1>
-  
-
-	      <!--显示阅读次数-->
-	      
-        
-          <a href="/2020/05/21/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-05-21T12:32:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-21</time>
-</a>
-          
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;color: grey">  字数统计: </span>
-        <!--这里样式可以自己定制-->
-        <span class="post-count" style="font-size: 16px;color: grey">1.4k字</span>
-      </span>
-    </span>
-    
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;color: grey">  阅读时长: </span>
-        <span class="post-count" style="font-size: 16px;color: grey">6分</span>
-      </span>
-    </span>
-</div>
-
-          
-        
-        </header>
-    
-    <!-- 目录内容 -->
-   
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Redis简介"><a href="#Redis简介" class="headerlink" title="Redis简介"></a>Redis简介</h1><p>Redis是高性能的key-value数据库。<br>特点：</p>
-<ul>
-<li>支持数据持久化</li>
-<li>支持key-value、list、set、zset、hash类型数据</li>
-<li>支持master-slave模式的数据备份
-        
-          <a class="article-more-a" href="/2020/05/21/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#more">more >></a>
-        
-      
-
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/21/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
   
 
 
@@ -1006,7 +1486,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">DAMA数据管理 阅读笔记</a>
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1014,11 +1494,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">NoSQL</a>
+                <a href="javascript:void(0)" class="js-tag color4">DAMA数据管理 阅读笔记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+                <a href="javascript:void(0)" class="js-tag color1">NoSQL</a>
               </li>
              
               <li class="article-tag-list-item">
