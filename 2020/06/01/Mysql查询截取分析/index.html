@@ -6,25 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.datasheep.info">
-  <title>亿级流量电商详情页系统实战 | 数据杨的个人博客</title>
+  <title>Mysql查询截取分析 | 数据杨的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="高并发高可用复杂系统中的缓存架构有哪些东西？">
+  <meta name="description" content="Mysql优化过程：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="亿级流量电商详情页系统实战">
-<meta property="og:url" content="http://www.datasheep.info/2020/05/21/%E4%BA%BF%E7%BA%A7%E6%B5%81%E9%87%8F%E7%94%B5%E5%95%86%E8%AF%A6%E6%83%85%E9%A1%B5%E7%B3%BB%E7%BB%9F%E5%AE%9E%E6%88%98/index.html">
+<meta property="og:title" content="Mysql查询截取分析">
+<meta property="og:url" content="http://www.datasheep.info/2020/06/01/Mysql%E6%9F%A5%E8%AF%A2%E6%88%AA%E5%8F%96%E5%88%86%E6%9E%90/index.html">
 <meta property="og:site_name" content="数据杨的个人博客">
-<meta property="og:description" content="高并发高可用复杂系统中的缓存架构有哪些东西？">
+<meta property="og:description" content="Mysql优化过程：">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://www.datasheep.info/assert/%E5%B0%8F%E5%9E%8B%E7%94%B5%E5%95%86%E9%9D%99%E6%80%81%E5%8C%96%E6%9E%B6%E6%9E%84.png">
-<meta property="og:image" content="http://www.datasheep.info/assert/%E5%A4%A7%E5%9E%8B%E7%94%B5%E5%95%86%E7%BD%91%E7%AB%99%E7%9A%84%E8%AF%A6%E6%83%85%E9%A1%B5%E6%9E%B6%E6%9E%84.png">
-<meta property="og:image" content="http://www.datasheep.info/assert/redis%E6%8C%81%E4%B9%85%E5%8C%96%E7%9A%84%E6%84%8F%E4%B9%89.png">
-<meta property="og:image" content="http://www.datasheep.info/assert/RDB%E5%92%8CAOF%E7%9A%84%E4%BB%8B%E7%BB%8D.png">
-<meta property="article:published_time" content="2020-05-21T14:57:30.000Z">
-<meta property="article:modified_time" content="2020-05-24T15:08:49.262Z">
+<meta property="og:image" content="http://www.datasheep.info/assert/mysql_rbo.png">
+<meta property="og:image" content="http://www.datasheep.info/assert/mysql_orderby.png">
+<meta property="og:image" content="http://www.datasheep.info/assert/mysql_px.png">
+<meta property="og:image" content="http://www.datasheep.info/assert/mysql_cyck.png">
+<meta property="article:published_time" content="2020-06-01T08:43:26.000Z">
+<meta property="article:modified_time" content="2020-06-02T01:10:20.202Z">
 <meta property="article:author" content="Data Sheep">
-<meta property="article:tag" content="项目">
+<meta property="article:tag" content="Mysql">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://www.datasheep.info/assert/%E5%B0%8F%E5%9E%8B%E7%94%B5%E5%95%86%E9%9D%99%E6%80%81%E5%8C%96%E6%9E%B6%E6%9E%84.png">
+<meta name="twitter:image" content="http://www.datasheep.info/assert/mysql_rbo.png">
   
     <link rel="alternative" href="/atom.xml" title="数据杨的个人博客" type="application/atom+xml">
   
@@ -169,14 +169,14 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-亿级流量电商详情页系统实战" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Mysql查询截取分析" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      亿级流量电商详情页系统实战
+      Mysql查询截取分析
     </h1>
   
 
@@ -191,8 +191,8 @@ var _hmt = _hmt || [];
   	    </a>
 	      
         
-          <a href="/2020/05/21/%E4%BA%BF%E7%BA%A7%E6%B5%81%E9%87%8F%E7%94%B5%E5%95%86%E8%AF%A6%E6%83%85%E9%A1%B5%E7%B3%BB%E7%BB%9F%E5%AE%9E%E6%88%98/" class="archive-article-date">
-  	<time datetime="2020-05-21T14:57:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-21</time>
+          <a href="/2020/06/01/Mysql%E6%9F%A5%E8%AF%A2%E6%88%AA%E5%8F%96%E5%88%86%E6%9E%90/" class="archive-article-date">
+  	<time datetime="2020-06-01T08:43:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-01</time>
 </a>
           
           <div style="margin-top:10px;">
@@ -201,7 +201,7 @@ var _hmt = _hmt || [];
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="font-size: 16px;color: grey">  字数统计: </span>
         <!--这里样式可以自己定制-->
-        <span class="post-count" style="font-size: 16px;color: grey">3k字</span>
+        <span class="post-count" style="font-size: 16px;color: grey">1.8k字</span>
       </span>
     </span>
     
@@ -210,7 +210,7 @@ var _hmt = _hmt || [];
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="font-size: 16px;color: grey">  阅读时长: </span>
-        <span class="post-count" style="font-size: 16px;color: grey">10分</span>
+        <span class="post-count" style="font-size: 16px;color: grey">7分</span>
       </span>
     </span>
 </div>
@@ -228,7 +228,7 @@ var _hmt = _hmt || [];
   <div id="toc-article" class="toc-article">
       <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
     <strong class="toc-title">文章目录</strong>
-           <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#高并发高可用复杂系统中的缓存架构有哪些东西？"><span class="toc-number">1.</span> <span class="toc-text">高并发高可用复杂系统中的缓存架构有哪些东西？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#小型电商商品详情页的架构"><span class="toc-number">2.</span> <span class="toc-text">小型电商商品详情页的架构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#大型电商网站的异步多级缓存构建-nginx数据本地化动态渲染的架构"><span class="toc-number">3.</span> <span class="toc-text">大型电商网站的异步多级缓存构建+nginx数据本地化动态渲染的架构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#能够支撑高并发-高可用-海量数据-备份恢复的redis的重要性"><span class="toc-number">4.</span> <span class="toc-text">能够支撑高并发+高可用+海量数据+备份恢复的redis的重要性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#redis生产环境启动方案"><span class="toc-number">5.</span> <span class="toc-text">redis生产环境启动方案</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Redis持久化机制对于故障恢复的意义"><span class="toc-number">6.</span> <span class="toc-text">Redis持久化机制对于故障恢复的意义</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Redis-RDB和AOF两种持久化机制的原理"><span class="toc-number">7.</span> <span class="toc-text">Redis RDB和AOF两种持久化机制的原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#RDB和AOF两种持久化机制介绍"><span class="toc-number">7.1.</span> <span class="toc-text">RDB和AOF两种持久化机制介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RDB持久化机制的优点"><span class="toc-number">7.2.</span> <span class="toc-text">RDB持久化机制的优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RDB持久化的缺点"><span class="toc-number">7.3.</span> <span class="toc-text">RDB持久化的缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AOF持久化的优点"><span class="toc-number">7.4.</span> <span class="toc-text">AOF持久化的优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AOF持久化的缺点"><span class="toc-number">7.5.</span> <span class="toc-text">AOF持久化的缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RDB和AOF的选择"><span class="toc-number">7.6.</span> <span class="toc-text">RDB和AOF的选择</span></a></li></ol></li></ol>
+           <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#查询优化"><span class="toc-number">1.</span> <span class="toc-text">查询优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#永远小表驱动大表"><span class="toc-number">1.1.</span> <span class="toc-text">永远小表驱动大表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#order-by关键字优化"><span class="toc-number">1.2.</span> <span class="toc-text">order by关键字优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#group-by关键字优化"><span class="toc-number">1.3.</span> <span class="toc-text">group by关键字优化</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#慢查询日志"><span class="toc-number">2.</span> <span class="toc-text">慢查询日志</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#批量数据脚本"><span class="toc-number">3.</span> <span class="toc-text">批量数据脚本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Show-Profile"><span class="toc-number">4.</span> <span class="toc-text">Show Profile</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#分析步骤"><span class="toc-number">4.1.</span> <span class="toc-text">分析步骤</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#全局查询日志"><span class="toc-number">5.</span> <span class="toc-text">全局查询日志</span></a></li></ol>
          </div>
    <script type="text/javascript">
   function showToc(){
@@ -248,67 +248,79 @@ var _hmt = _hmt || [];
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="高并发高可用复杂系统中的缓存架构有哪些东西？"><a href="#高并发高可用复杂系统中的缓存架构有哪些东西？" class="headerlink" title="高并发高可用复杂系统中的缓存架构有哪些东西？"></a>高并发高可用复杂系统中的缓存架构有哪些东西？</h1><a id="more"></a>
+        <p>Mysql优化过程：</p>
+<a id="more"></a>
 <ol>
-<li>缓存架构/技术掌握的不够，对你的发展带来了哪些阻碍？</li>
+<li>观察，至少跑1天，看看生产的慢SQL情况</li>
+<li>开启慢查询日志，设置阈值，比如超过5秒的就是慢SQL，并将它抓取出来</li>
+<li>explain+慢SQL分析</li>
+<li>show profile</li>
+<li>运维经理 or DBA，进行SQL数据库服务器的参数调优<br>总结：</li>
+<li>慢查询的开启并捕获</li>
+<li>explain+慢SQL分析</li>
+<li>show profile查询SQL在Mysql服务器里面的执行细节和生命周期情况</li>
+<li>SQL数据库服务器的参数调优<h1 id="查询优化"><a href="#查询优化" class="headerlink" title="查询优化"></a>查询优化</h1><h2 id="永远小表驱动大表"><a href="#永远小表驱动大表" class="headerlink" title="永远小表驱动大表"></a>永远小表驱动大表</h2>类似嵌套循环Nested Loop<br>优化原则：小表驱动大表，小的数据集驱动大的数据集<br><img src="/assert/mysql_rbo.png" alt="avator"><br>exists:<br><code>select 。。。 from table where exists（subquery）</code><br>将主查询的数据，放到子查询中做条件验证，根据验证结果（true或false）来决定主查询的数据结果是否得以保留</li>
+<li>exists（subquery）只返回true或false，因此子查询中的select “x”在实际执行时会被忽略</li>
+<li>exists子查询的实际执行过程可能经过了优化而不是我们理解上的逐条对比</li>
+<li>exists子查询也可以用条件表达式、其他子查询或者join来替代 </li>
 </ol>
-<p>工作中:</p>
-<p>如果你这块技术掌握不够，然后你的公司的项目遇到了一些相关的难题，高并发+高性能的场景，hold不住类似的这种高并发的系统</p>
-<p>因为缓存架构做得不好，不到位，实际在公司的项目里，出了一些大case，导致系统崩溃，巨大的经济损失</p>
-<p>职业发展中:</p>
-<p>redis，memcached，activemq，zookeeper，kafka，lucene，activiti，爬虫，或者等等，各种技术，写了都几十种技术</p>
-<p>没有一样是精通的，redis就会简单的操作，memcached操作，activemq，zookeeper，爬虫，全都是简单的操作</p>
-<p>架构设计思路，有没有一些考量的点，高并发的中场景，高可用的场景，说不出来</p>
-<p>不可能做到更高级的一个职位了，因为很多公司的人也不傻，技术一看就平平庸庸，怎么给你一个很好的职位呢？职业发展怎么做上去呢？</p>
-<p>亮点，技术亮点，高人一筹</p>
-<p>java高工，java资深工，java架构，技术亮点，造诣</p>
-<p>如果你的技术很牛，各种技术都有深度，架构面临过一些复杂的场景，别人搞不定的高并发高可用的系统架构，你都能搞定，职业发展就会做的很好</p>
-<ol start="2">
-<li>真正能支撑高并发以及高可用的复杂系统中的缓存架构有哪些东西？</li>
-</ol>
-<p>（1）如何让redis集群支撑几十万QPS高并发+99.99%高可用+TB级海量数据+企业级数据备份与恢复？：redis企业级集群架构</p>
-<p>（2）如何支撑高性能以及高并发到极致？同时给缓存架构最后的安全保护层？：(nginx+lua)+redis+ehcache的三级缓存架构</p>
-<p>（3）高并发场景下，如何解决数据库与缓存双写的时候数据不一致的情况？：企业级的完美的数据库+缓存双写一致性解决方案</p>
-<p>（4）如何解决大value缓存的全量更新效率低下问题？：缓存维度化拆分解决方案</p>
-<p>（5）如何将缓存命中率提升到极致？：双层nginx部署架构，以及lua脚本实现的一致性hash流量分发策略</p>
-<p>（6）如何解决高并发场景下，缓存重建时的分布式并发重建的冲突问题？：基于zookeeper分布式锁的缓存并发重建解决方案</p>
-<p>（7）如何解决高并发场景下，缓存冷启动MySQL瞬间被打死的问题？：基于storm实时统计热数据的分布式快速缓存预热解决方案</p>
-<p>（8）如何解决热点缓存导致单机器负载瞬间超高？：基于storm的实时热点发现，以及毫秒级的实时热点缓存负载均衡降级</p>
-<p>（9）如何解决分布式系统中的服务高可用问题？避免多层服务依赖因为少量故障导致系统崩溃？：基于hystrix的高可用缓存服务，资源隔离+限流+降级+熔断+超时控制</p>
-<p>（10）如何应用分布式系统中的高可用服务的高阶技术？：基于hystrix的容错+多级降级+手动降级+生产环境参数优化经验+可视化运维与监控</p>
-<p>（11）如何解决恐怖的缓存雪崩问题？避免给公司带来巨大的经济损失？：独家的事前+事中+事后三层次完美解决方案</p>
-<p>（12）如何解决高并发场景下的缓存穿透问题？避免给MySQL带来过大的压力？：缓存穿透解决方案</p>
-<p>（13）如何解决高并发场景下的缓存失效问题？避免给redis集群带来过大的压力？：缓存失效解决方案</p>
-<h1 id="小型电商商品详情页的架构"><a href="#小型电商商品详情页的架构" class="headerlink" title="小型电商商品详情页的架构"></a>小型电商商品详情页的架构</h1><p>页面静态化，全量的页面静态化<br><img src="/assert/%E5%B0%8F%E5%9E%8B%E7%94%B5%E5%95%86%E9%9D%99%E6%80%81%E5%8C%96%E6%9E%B6%E6%9E%84.png" alt="avator"></p>
-<p>如果模版改变了，那么模版对应的所有商品数据都需要渲染一遍，生产最终静态的HTML页面。</p>
-<p>对于小网站，页面很少，这种架构比较实用；对于大网站，页面太多，一个模版修改了，需要耗费大量时间渲染，不太靠谱</p>
-<h1 id="大型电商网站的异步多级缓存构建-nginx数据本地化动态渲染的架构"><a href="#大型电商网站的异步多级缓存构建-nginx数据本地化动态渲染的架构" class="headerlink" title="大型电商网站的异步多级缓存构建+nginx数据本地化动态渲染的架构"></a>大型电商网站的异步多级缓存构建+nginx数据本地化动态渲染的架构</h1><p><img src="/assert/%E5%A4%A7%E5%9E%8B%E7%94%B5%E5%95%86%E7%BD%91%E7%AB%99%E7%9A%84%E8%AF%A6%E6%83%85%E9%A1%B5%E6%9E%B6%E6%9E%84.png" alt="avator"></p>
-<h1 id="能够支撑高并发-高可用-海量数据-备份恢复的redis的重要性"><a href="#能够支撑高并发-高可用-海量数据-备份恢复的redis的重要性" class="headerlink" title="能够支撑高并发+高可用+海量数据+备份恢复的redis的重要性"></a>能够支撑高并发+高可用+海量数据+备份恢复的redis的重要性</h1><p>缓存架构的第一块：redis架构</p>
-<p>缓存架构需要支撑高并发、高可用、海量数据、备份、随时可恢复，首先就是redis支撑</p>
-<p>最简单的缓存架构就是存取redis</p>
-<p>解决各种各样高并发场景下缓存难题，以及各种各样缓存架构本身的高可用问题</p>
-<h1 id="redis生产环境启动方案"><a href="#redis生产环境启动方案" class="headerlink" title="redis生产环境启动方案"></a>redis生产环境启动方案</h1><p>生产环境中要把redis作为一个系统的daemon进程去运行，每次系统启动，redis进程一起启动<br>配置redis.conf中的部分配置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">daemonize   yes                         让redis以daemon进程运行</span><br><span class="line">pidfile     &#x2F;var&#x2F;run&#x2F;redis_6379.pid     设置redis的pid文件位置</span><br><span class="line">port        6379                        设置redis的监听端口号</span><br><span class="line">dir         &#x2F;var&#x2F;redis&#x2F;6379             设置持久化文件的存储位置</span><br></pre></td></tr></table></figure>
-<p>让redis跟随系统启动自动启动</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">在脚本最上面添加两行注释</span><br><span class="line"># chkconfig:   2345 90 10</span><br><span class="line"></span><br><span class="line"># description:  Redis is a persistent key-value database</span><br><span class="line"></span><br><span class="line">chkconfig redis_6379 on 让脚本跟随开机执行</span><br></pre></td></tr></table></figure>
-
-<p>redis-cli的使用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">redis-cli SHUTDOWN，连接本机的6379端口停止redis进程</span><br><span class="line"></span><br><span class="line">redis-cli -h 127.0.0.1 -p 6379 SHUTDOWN，制定要连接的ip和端口号</span><br><span class="line"></span><br><span class="line">redis-cli PING，ping redis的端口，看是否正常</span><br><span class="line"></span><br><span class="line">redis-cli，进入交互式命令行</span><br><span class="line"></span><br><span class="line">SET k1 v1</span><br><span class="line">GET k1</span><br></pre></td></tr></table></figure>
-<p>redis技术包括4块：</p>
+<h2 id="order-by关键字优化"><a href="#order-by关键字优化" class="headerlink" title="order by关键字优化"></a>order by关键字优化</h2><p>order by子句，尽量使用index方式排序，避免使用filesort方式排序<br>mysql支持两种方式的排序，filesort和index，index效率高，它指mysql扫描索引本身完成排序，filesort方式效率较低<br>order by满足两种情况会使用index方式排序：</p>
 <ul>
-<li>redis各种数据结构和命令的使用，包括java api的使用</li>
-<li>redis一些特殊的解决方案的使用，pub/sub消息系统，分布式锁，输入的自动完成，等等</li>
-<li>redis日常的管理相关的命令</li>
-<li>redis企业级的集群部署和架构</li>
+<li>order by使用索引最左前列</li>
+<li>使用where子句与order by子句条件组合满足索引最左前列</li>
 </ul>
-<h1 id="Redis持久化机制对于故障恢复的意义"><a href="#Redis持久化机制对于故障恢复的意义" class="headerlink" title="Redis持久化机制对于故障恢复的意义"></a>Redis持久化机制对于故障恢复的意义</h1><p>redis持久化的意义：在于故障恢复,如果没有持久化，redis在遇到灾难性的故障时会丢失所有数据<br>通过持久化将数据落地到磁盘上，定期同步或备份到云存储上，可以保证数据不完全丢失，可以恢复部分<br><img src="/assert/redis%E6%8C%81%E4%B9%85%E5%8C%96%E7%9A%84%E6%84%8F%E4%B9%89.png" alt="avator"></p>
-<h1 id="Redis-RDB和AOF两种持久化机制的原理"><a href="#Redis-RDB和AOF两种持久化机制的原理" class="headerlink" title="Redis RDB和AOF两种持久化机制的原理"></a>Redis RDB和AOF两种持久化机制的原理</h1><p>持久化主要是做灾难恢复、数据恢复，也可以归类到高可用的一个环节，redis的持久化做好，在redis故障时可用通过备份数据快速恢复，立即对外提供服务，从而避免缓存雪崩问题，导致mysql承接高并发，最好导致mysql挂掉的情况</p>
-<h2 id="RDB和AOF两种持久化机制介绍"><a href="#RDB和AOF两种持久化机制介绍" class="headerlink" title="RDB和AOF两种持久化机制介绍"></a>RDB和AOF两种持久化机制介绍</h2><p><img src="/assert/RDB%E5%92%8CAOF%E7%9A%84%E4%BB%8B%E7%BB%8D.png" alt="avator"><br>RDB持久化机制，对redis中的数据执行周期性的持久化<br>AOF机制对每条写入命令作为日志，以append-only的模式写入一个日志文件中，在redis重启的时候，可以通过回放AOF日志中的写入指令来重新构建整个数据集<br>redis作为纯内存的缓存时：可以禁止RDB和AOF持久化机制<br>如果同时使用RDB和AOF两种持久化机制，在redis重启时，会使用AOF重新构建数据，因为AOF中的数据更加完整</p>
-<h2 id="RDB持久化机制的优点"><a href="#RDB持久化机制的优点" class="headerlink" title="RDB持久化机制的优点"></a>RDB持久化机制的优点</h2><p>1、RDB会生成很多个数据文件，每个数据文件代表来某时刻中redis的数据，多个数据文件的方式非常适合做冷备，可以将这种完整的数据文件发送到一些远程的安全存储中<br>2、RDB对redis对外提供的读写服务，影响非常小，可以让redis保持高性能<br>redis主进程会fork一个子进程，让子进程执行磁盘IO操作进行持久化<br>3、相对于AOF持久化，直接基于RDB数据文件来重启和恢复redis进程，会比较快捷</p>
-<h2 id="RDB持久化的缺点"><a href="#RDB持久化的缺点" class="headerlink" title="RDB持久化的缺点"></a>RDB持久化的缺点</h2><p>1、如果想要在redis故障时，尽可能少的丢失数据，那么RDB没有AOF好。一般来说，RDB数据快照文件，都是每隔5分钟，或者更长时间生成一次，这个时候就得接受一旦redis进程宕机，那么会丢失最近5分钟的数据<br>2、RDB每次在fork子进程来执行RDB快照数据文件生成的时候，如果数据文件特别大，可能会导致对客户端提供的服务暂停数毫秒，或者甚至数秒</p>
-<h2 id="AOF持久化的优点"><a href="#AOF持久化的优点" class="headerlink" title="AOF持久化的优点"></a>AOF持久化的优点</h2><p>1、AOF可以更好的保护数据不丢失，一般AOF会每隔1秒，通过一个后台线程执行一次fsync操作，最多丢失1秒钟的数据<br>2、AOF日志文件以append-only模式写入，所以没有任何磁盘寻址的开销，写入性能非常高，而且文件不容易破损，即使文件尾部破损，也很容易修复<br>3、AOF日志文件即使过大的时候，出现后台重写操作，也不会影响客户端的读写。因为在rewrite log的时候，会对其中的指导进行压缩，创建出一份需要恢复数据的最小日志出来。再创建新日志文件的时候，老的日志文件还是照常写入。当新的merge后的日志文件ready的时候，再交换新老日志文件即可。<br>4、AOF日志文件的命令通过非常可读的方式进行记录，这个特性非常适合做灾难性的误删除的紧急恢复。比如某人不小心用flushall命令清空了所有数据，只要这个时候后台rewrite还没有发生，那么就可以立即拷贝AOF文件，将最后一条flushall命令给删了，然后再将该AOF文件放回去，就可以通过恢复机制，自动恢复所有数据<br>![avator](/assert/AOF rewrite原理剖析.png)<br>rewrite机制可以参考HDFS的edits文件</p>
-<h2 id="AOF持久化的缺点"><a href="#AOF持久化的缺点" class="headerlink" title="AOF持久化的缺点"></a>AOF持久化的缺点</h2><p>1、对于同一份数据来说，AOF日志文件通常比RDB数据快照文件更大<br>2、AOF开启后，支持的写QPS会比RDB支持的写QPS低，因为AOF一般会配置成每秒fsync一次日志文件，当然，每秒一次fsync，性能也还是很高的<br>3、以前AOF发生过bug，就是通过AOF记录的日志，进行数据恢复的时候，没有恢复一模一样的数据出来。所以说，类似AOF这种较为复杂的基于命令日志/merge/回放的方式，比基于RDB每次持久化一份完整的数据快照文件的方式，更加脆弱一些，容易有bug。不过AOF就是为了避免rewrite过程导致的bug，因此每次rewrite并不是基于旧的指令日志进行merge的，而是基于当时内存中的数据进行指令的重新构建，这样健壮性会好很多</p>
-<h2 id="RDB和AOF的选择"><a href="#RDB和AOF的选择" class="headerlink" title="RDB和AOF的选择"></a>RDB和AOF的选择</h2><p>1、不要仅仅使用RDB，因为那样会导致你丢失很多数据<br>2、也不要仅仅使用AOF，因为那样有两个问题，第一，你通过AOF做冷备，没有RDB做冷备，来的恢复速度更快; 第二，RDB每次简单粗暴生成数据快照，更加健壮，可以避免AOF这种复杂的备份和恢复机制的bug<br>3、综合使用AOF和RDB两种持久化机制，用AOF来保证数据不丢失，作为数据恢复的第一选择; 用RDB来做不同程度的冷备，在AOF文件都丢失或损坏不可用的时候，还可以使用RDB来进行快速的数据恢复</p>
+<p>尽可能在索引列上完成排序操作，遵照索引建的最佳左前缀</p>
+<p>如果不在索引列上，filesort有两种算法：mysql就要启动双路排序和单路排序<br>双路排序：mysql4.1之前使用双路排序，两次扫描磁盘，最终得到数据<br>读取行指针和orderby列，对他们进行排序，然后扫描已经排序好的列表，按照列表中的值重新从列表中读取对应的数据输出<br>从磁盘取排序字段，在buffer进行排序，再从磁盘取其他字段</p>
+<p>单路排序：从磁盘读取查询需要的所有列，按照order by列在buffer中对它们进行排序，然后扫描排序后的列表进行输出，它的效率更快一些，避免了二次读取数据，并且把随机IO变成了顺序IO，但是会使用到更多的空间，因为它把每一行都保存在内存中了</p>
+<p>总体而言，单路排序好过双路排序，但是如果取出的数据大小超出了sort_buffer，会导致多次IO操作，反而效果更差</p>
+<p>优化策略：</p>
+<ul>
+<li>增大sort_buffer_size参数的设置</li>
+<li>增大max_length_for_sort_data参数的设置</li>
+<li>why<br><img src="/assert/mysql_orderby.png" alt="avator"></li>
+</ul>
+<p>总结：<br><img src="/assert/mysql_px.png" alt="avator"></p>
+<h2 id="group-by关键字优化"><a href="#group-by关键字优化" class="headerlink" title="group by关键字优化"></a>group by关键字优化</h2><p>group by实质是先排序后进行分组，遵照索引建的最佳左前缀<br>当无法使用索引列，增大max_length_for_sort_data参数的设置+sort_buffer_size的参数设置<br>where高于having，能写在where限定的条件就不要去having限定</p>
+<h1 id="慢查询日志"><a href="#慢查询日志" class="headerlink" title="慢查询日志"></a>慢查询日志</h1><p>mysql的慢查询日志是mysql提供的一种日志记录，用来记录在mysql中响应时间超过阈值的语句，具体指运行时间超过long_query_time值的SQL，则会被记录在慢查询日志中<br>long_query_time的默认值是10，意思是运行10秒以上的语句<br>由它来查看哪些SQL超过了我们的最大忍耐时间，比如一条SQL执行超过了5秒钟，就算慢SQL，希望能收集超过5秒的SQL，结合之前的explain进行全面分析</p>
+<p>默认mysql数据库没有开启慢查询日志，需要收到开启<br>如果不是调优需要的话，不建议启动该参数<br><code>show variables like &#39;%slow_query_log%&#39;</code><br>开启<code>set global slow_query_log=1</code>，只对当前数据库生效，系统默认文件host_name-slow.log<br>判断大于long_query_time的SQL记录下来</p>
+<p>操作：<br>查看<code>show variables like &#39;%long_query_time%&#39;</code><br>设置<code>set global long_query_time=3</code><br>设置之后需要重新连接或新开个会话才能看到修改值<code>show global variables like &#39;long_query_time&#39;</code><br>记录慢查询并后续分析</p>
+<p>日志分析工具mysqldumpslow：<code>mysqldumpslow --help</code></p>
+<ul>
+<li>s 按照何种方式排序</li>
+<li>c 访问次数</li>
+<li>l 锁定时间</li>
+<li>r 返回记录</li>
+<li>t 查询时间</li>
+<li>al 平均锁定时间</li>
+<li>ar 平均返回记录数</li>
+<li>at 平均查询时间</li>
+<li>t 返回前面多少条数据</li>
+<li>g 后面搭配一个正则表达式，大小写不敏感</li>
+</ul>
+<p>常用参考：<br><img src="/assert/mysql_cyck.png" alt="avator"></p>
+<h1 id="批量数据脚本"><a href="#批量数据脚本" class="headerlink" title="批量数据脚本"></a>批量数据脚本</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">create database bigdata;</span><br><span class="line">use bigdata;</span><br><span class="line"></span><br><span class="line">create table dept(</span><br><span class="line">id int unsigned primary key auto_increment,</span><br><span class="line">deptno mediumint unsigned not null default 0,</span><br><span class="line">dname varchar(20) not null default &quot;&quot;,</span><br><span class="line">loc varchar(13) not null default &quot;&quot;</span><br><span class="line">)engine&#x3D;innodb default charset&#x3D;gbk;</span><br><span class="line"></span><br><span class="line">create table emp(</span><br><span class="line">id int unsigned primary key auto_increment,</span><br><span class="line">empno mediumint unsigned not null default 0,</span><br><span class="line">ename varchar(20) not null default &quot;&quot;,</span><br><span class="line">job varchar(9) not null default &quot;&quot;,</span><br><span class="line">mgr mediumint unsigned not null default 0,</span><br><span class="line">hiredate date not null,</span><br><span class="line">sal decimal(7,2) not null,</span><br><span class="line">comm decimal(7,2) not null,</span><br><span class="line">deptno mediumint unsigned not null default 0</span><br><span class="line">)engine&#x3D;innodb default charset&#x3D;gbk;</span><br><span class="line"></span><br><span class="line">show variables like &#39;log_bin_trust_function_creators&#39;;</span><br><span class="line">set global log_bin_trust_function_creators&#x3D;1;</span><br><span class="line"></span><br><span class="line">delimiter $$</span><br><span class="line">create function rand_string(n int) returns varchar(255)</span><br><span class="line">begin </span><br><span class="line">    declare chars_str varchar(100) default &#39;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;;</span><br><span class="line">    declare return_str varchar(255) default &#39;&#39;;</span><br><span class="line">    declare i int default 0;</span><br><span class="line">    while i &lt; n do</span><br><span class="line">    set return_str &#x3D; concat(return_str,substring(chars_str,floor(1+rand()*52),1));</span><br><span class="line">    set i &#x3D; i + 1;</span><br><span class="line">    end while;</span><br><span class="line">    return return_str;</span><br><span class="line">end $$</span><br><span class="line"></span><br><span class="line">delimiter $$</span><br><span class="line">create function rand_num() returns int(5)</span><br><span class="line">begin </span><br><span class="line">    declare i int default 0;</span><br><span class="line">    set i &#x3D; floor(100+rand()*10);</span><br><span class="line">    return i;</span><br><span class="line">end $$</span><br><span class="line"></span><br><span class="line">delimiter $$</span><br><span class="line">create procedure insert_emp(in start int(10),in max_num int(10))</span><br><span class="line">begin</span><br><span class="line">declare i int default 0;</span><br><span class="line">set autocommit &#x3D; 0;</span><br><span class="line">repeat</span><br><span class="line">set i &#x3D; i +1;</span><br><span class="line">insert into emp(empno,ename,job,mgr,hiredate,sal,comm,deptno) values ((start+i),rand_string(6),&#39;SALESMAN&#39;,0001,curdate(),2000,400,rand_num());</span><br><span class="line">until i &#x3D; max_num</span><br><span class="line">end repeat;</span><br><span class="line">commit;</span><br><span class="line">end $$</span><br><span class="line"></span><br><span class="line">delimiter $$</span><br><span class="line">create procedure insert_dept(in start int(10),in max_num int(10))</span><br><span class="line">begin</span><br><span class="line">declare i int default 0;</span><br><span class="line">set autocommit &#x3D; 0;</span><br><span class="line">repeat</span><br><span class="line">set i &#x3D; i +1;</span><br><span class="line">insert into dept(deptno,dname,loc) values ((start+i),rand_string(10),rand_string(8));</span><br><span class="line">until i &#x3D; max_num</span><br><span class="line">end repeat;</span><br><span class="line">commit;</span><br><span class="line">end $$</span><br><span class="line"></span><br><span class="line">delimiter ;</span><br><span class="line">call insert_dept(100,10);</span><br><span class="line">call insert_emp(100001,500000);</span><br></pre></td></tr></table></figure>
+<h1 id="Show-Profile"><a href="#Show-Profile" class="headerlink" title="Show Profile"></a>Show Profile</h1><p>是mysql提供的可以用来分析当前会话中语句执行的资源消耗情况，可以用于SQL调优的测量<br>默认处于关闭状态，并保存最近15次的运行结果</p>
+<h2 id="分析步骤"><a href="#分析步骤" class="headerlink" title="分析步骤"></a>分析步骤</h2><p><code>show variables like &#39;profiling&#39;;</code><br><code>set profiling=on;</code><br>运行SQL：<br><code>select * from emp group by id%10 limit 150000;</code><br><code>select * from emp group by id%20 order by 5;</code><br>查看结果：<code>show profiles;</code><br>诊断SQL，<code>show profile cpu,block io for query 上一步问题SQL的数字号码</code><br>参数备注：</p>
+<ul>
+<li>all 显示所有开销信息</li>
+<li>block io 显示块io相关开销</li>
+<li>context switchs 上下文切换开销</li>
+<li>cpu 显示cpu相关开销</li>
+<li>ipc 显示发送和接收开销</li>
+<li>memory 显示内存相关开销</li>
+<li>page faults 显示页面错误相关开销信息</li>
+<li>source 显示和source_function，source_file，source_line相关的开销信息</li>
+<li>swaps 显示交换次数相关开销的信息</li>
+</ul>
+<p>日常开发注意：</p>
+<ul>
+<li>converting HEAP to MyISAM查询结果太大，内存不够用往磁盘上搬</li>
+<li>creating tmp table 创建临时表——拷贝数据到临时表，用完再删除</li>
+<li>copying to tmp table on disk 把内存中临时表复制到磁盘，危险</li>
+<li>locked</li>
+</ul>
+<h1 id="全局查询日志"><a href="#全局查询日志" class="headerlink" title="全局查询日志"></a>全局查询日志</h1><p><strong>永远不要在生产环境开启这个功能</strong><br>配置启用<br>my.cnf<br>general_log=1<br>general_log_file=/path/logfile<br>log_output=FILE</p>
+<p>编码启用<br>set global general_log=1;<br>set global log_output=’TABLE’;<br>select * from mysql.general_log;</p>
 
       
 
@@ -371,7 +383,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">项目</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
         		</li>
       		
 		</ul>
@@ -427,7 +439,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.datasheep.info/2020/05/21/%E4%BA%BF%E7%BA%A7%E6%B5%81%E9%87%8F%E7%94%B5%E5%95%86%E8%AF%A6%E6%83%85%E9%A1%B5%E7%B3%BB%E7%BB%9F%E5%AE%9E%E6%88%98/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.datasheep.info/2020/06/01/Mysql%E6%9F%A5%E8%AF%A2%E6%88%AA%E5%8F%96%E5%88%86%E6%9E%90/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -441,18 +453,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2020/05/22/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Redis学习笔记（二）
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/05/21/Redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Redis学习笔记</div>
+    <a href="/2020/05/31/Mysql%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Mysql索引优化</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -480,7 +483,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#高并发高可用复杂系统中的缓存架构有哪些东西？"><span class="toc-number">1.</span> <span class="toc-text">高并发高可用复杂系统中的缓存架构有哪些东西？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#小型电商商品详情页的架构"><span class="toc-number">2.</span> <span class="toc-text">小型电商商品详情页的架构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#大型电商网站的异步多级缓存构建-nginx数据本地化动态渲染的架构"><span class="toc-number">3.</span> <span class="toc-text">大型电商网站的异步多级缓存构建+nginx数据本地化动态渲染的架构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#能够支撑高并发-高可用-海量数据-备份恢复的redis的重要性"><span class="toc-number">4.</span> <span class="toc-text">能够支撑高并发+高可用+海量数据+备份恢复的redis的重要性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#redis生产环境启动方案"><span class="toc-number">5.</span> <span class="toc-text">redis生产环境启动方案</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Redis持久化机制对于故障恢复的意义"><span class="toc-number">6.</span> <span class="toc-text">Redis持久化机制对于故障恢复的意义</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Redis-RDB和AOF两种持久化机制的原理"><span class="toc-number">7.</span> <span class="toc-text">Redis RDB和AOF两种持久化机制的原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#RDB和AOF两种持久化机制介绍"><span class="toc-number">7.1.</span> <span class="toc-text">RDB和AOF两种持久化机制介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RDB持久化机制的优点"><span class="toc-number">7.2.</span> <span class="toc-text">RDB持久化机制的优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RDB持久化的缺点"><span class="toc-number">7.3.</span> <span class="toc-text">RDB持久化的缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AOF持久化的优点"><span class="toc-number">7.4.</span> <span class="toc-text">AOF持久化的优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AOF持久化的缺点"><span class="toc-number">7.5.</span> <span class="toc-text">AOF持久化的缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RDB和AOF的选择"><span class="toc-number">7.6.</span> <span class="toc-text">RDB和AOF的选择</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#查询优化"><span class="toc-number">1.</span> <span class="toc-text">查询优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#永远小表驱动大表"><span class="toc-number">1.1.</span> <span class="toc-text">永远小表驱动大表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#order-by关键字优化"><span class="toc-number">1.2.</span> <span class="toc-text">order by关键字优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#group-by关键字优化"><span class="toc-number">1.3.</span> <span class="toc-text">group by关键字优化</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#慢查询日志"><span class="toc-number">2.</span> <span class="toc-text">慢查询日志</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#批量数据脚本"><span class="toc-number">3.</span> <span class="toc-text">批量数据脚本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Show-Profile"><span class="toc-number">4.</span> <span class="toc-text">Show Profile</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#分析步骤"><span class="toc-number">4.1.</span> <span class="toc-text">分析步骤</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#全局查询日志"><span class="toc-number">5.</span> <span class="toc-text">全局查询日志</span></a></li></ol>
                     </div>
                 </span>
             </div>
