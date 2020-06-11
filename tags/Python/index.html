@@ -6,19 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.datasheep.info">
-  <title>Mysql索引优化 | 数据杨的个人博客</title>
+  <title>Tag: Python | 数据杨的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="索引优化">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Mysql索引优化">
-<meta property="og:url" content="http://www.datasheep.info/2020/05/31/Mysql%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96/index.html">
+  <meta name="description" content="努力成长的大数据学习者">
+<meta property="og:type" content="website">
+<meta property="og:title" content="数据杨的个人博客">
+<meta property="og:url" content="http://www.datasheep.info/tags/Python/index.html">
 <meta property="og:site_name" content="数据杨的个人博客">
-<meta property="og:description" content="索引优化">
+<meta property="og:description" content="努力成长的大数据学习者">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-05-31T02:01:50.000Z">
-<meta property="article:modified_time" content="2020-06-01T08:42:36.810Z">
 <meta property="article:author" content="Data Sheep">
-<meta property="article:tag" content="Mysql">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="数据杨的个人博客" type="application/atom+xml">
@@ -164,365 +161,60 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Mysql索引优化" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Mysql索引优化
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/06/06/Python%E7%88%AC%E8%99%AB%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2020-06-06T06:27:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-06</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/06/06/Python%E7%88%AC%E8%99%AB%EF%BC%88%E4%B8%80%EF%BC%89/">Python爬虫（一）</a>
     </h1>
   
 
-	      <!--显示阅读次数-->
-	      
-  	    <br/>
-  	    <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
-  	     <span class="icon-sort"></span>
-  	     <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
-  	        阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
-  	     </span>
-  	    </a>
-	      
-        
-          <a href="/2020/05/31/Mysql%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96/" class="archive-article-date">
-  	<time datetime="2020-05-31T02:01:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-31</time>
-</a>
+        <div class="article-info info-on-right">
           
-          <div style="margin-top:10px;">
-    <span class="post-time">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-keyboard-o"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;color: grey">  字数统计: </span>
-        <!--这里样式可以自己定制-->
-        <span class="post-count" style="font-size: 16px;color: grey">2k字</span>
-      </span>
-    </span>
-    
-    <span class="post-time">
-      &nbsp; | &nbsp;
-      <span class="post-meta-item-icon">
-        <i class="fa fa-hourglass-half"></i>
-        <span class="post-meta-item-text" style="font-size: 16px;color: grey">  阅读时长: </span>
-        <span class="post-count" style="font-size: 16px;color: grey">9分</span>
-      </span>
-    </span>
-</div>
-
-          
-        
-        </header>
-    
-    <!-- 目录内容 -->
-
-    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
-          <span class="btn-bg"></span>
-          <span class="btn-text">文章导航</span>
-          </p>
-  <div id="toc-article" class="toc-article">
-      <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
-    <strong class="toc-title">文章目录</strong>
-           <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#索引优化"><span class="toc-number">1.</span> <span class="toc-text">索引优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#索引分析"><span class="toc-number">1.1.</span> <span class="toc-text">索引分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#索引优化-1"><span class="toc-number">1.2.</span> <span class="toc-text">索引优化</span></a></li></ol></li></ol>
-         </div>
-   <script type="text/javascript">
-  function showToc(){
-    var toc_article = document.getElementById("toc-article");
-    var show_toc_btn = document.getElementById("show-toc-btn");
-    toc_article.setAttribute("style","display:block");
-    show_toc_btn.setAttribute("style","display:none");
-    };
-  function showBtn(){
-    var toc_article = document.getElementById("toc-article");
-    var show_toc_btn = document.getElementById("show-toc-btn");
-    toc_article.setAttribute("style","display:none");
-    show_toc_btn.setAttribute("style","display:block");
-    };
-   </script>
-         
-<!-- 目录内容结束 -->
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="索引优化"><a href="#索引优化" class="headerlink" title="索引优化"></a>索引优化</h1><a id="more"></a>
-<h2 id="索引分析"><a href="#索引分析" class="headerlink" title="索引分析"></a>索引分析</h2><p>单表：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">create table if not exists article(</span><br><span class="line">id int(10) unsigned not null primary key auto_increment,</span><br><span class="line">author_id int(10) unsigned not null,</span><br><span class="line">category_id int(10) unsigned not null,</span><br><span class="line">views int(10) unsigned not null,</span><br><span class="line">comments int(10) unsigned not null,</span><br><span class="line">title varbinary(255) not null,</span><br><span class="line">content text not null</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">insert into article(author_id,category_id,views,comments,title,content) values </span><br><span class="line">(1,1,1,1,&#39;1&#39;,&#39;1&#39;),</span><br><span class="line">(2,2,2,2,&#39;2&#39;,&#39;2&#39;),</span><br><span class="line">(1,1,3,3,&#39;3&#39;,&#39;3&#39;);</span><br></pre></td></tr></table></figure>
-<p>案例：<br>1、查询category_id为1且comments大于1的情况下，views最多的article_id<br><code>explain select id,author_id from article where category_id= 1 and comments &gt; 1 order by views desc limit 1;</code><br>结论：type是all，extra出现了using filesort，效果很差必须优化<br>开始优化：<br>新建索引+删除索引</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alter table article add index idx_article_ccv(category_id,comments,views);</span><br><span class="line">create index idx_article_ccv on article(category_id,comments,views);</span><br><span class="line">drop index idx_article_ccv on article;</span><br></pre></td></tr></table></figure>
-<p>建立ccv索引后，仍出现using filesort，为什么索引没用？<br>按照BTree索引的原理，先排序category_id，如果遇到相同的category_id再排序comments，遇到相同的comments再排序views；<br>当comments字段在联合索引的中间位置，因comments&gt;1条件是一个范围值（range），mysql无法利用索引再对后面的views部分进行检索，即<strong>range类型查询字段后面的索引无效</strong></p>
-<p>建立第二次索引</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create index idx_article_cv on article(category_id,views);</span><br></pre></td></tr></table></figure>
-<p>type变成了ref，using filesort也消失了</p>
-<p>两表；</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">create table if not exists class(</span><br><span class="line">id int(10) unsigned not null primary key auto_increment,</span><br><span class="line">card int(10) unsigned not null</span><br><span class="line">);</span><br><span class="line">create table if not exists book(</span><br><span class="line">bookid int(10) unsigned not null primary key auto_increment,</span><br><span class="line">card int(10) unsigned not null</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">insert into class(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into class(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into class(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into class(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into class(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into class(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into class(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into class(card) values(floor(1+(rand()*20)));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">insert into book(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into book(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into book(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into book(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into book(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into book(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into book(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into book(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into book(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into book(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into book(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into book(card) values(floor(1+(rand()*20)));</span><br></pre></td></tr></table></figure>
-<p>案例：<br><code>explain select * from class left join book on class.card=book.card;</code><br>结论：type有all<br>添加索引优化<br><code>alter table book add index(card);</code><br>第二行 all 变成了 ref，rows也变成了1，优化明显<br>由左连接特性决定的，left join条件用于确定如何从右表搜索行，左边一定都有<br>所以右边是关键点，一定要建立索引<br><code>drop index card on book;</code></p>
-<p>第二次添加索引<br><code>alter table class add index(card);</code><br>第一行 all 变成了 index<br>总结：左连接建右表，右连接建左表</p>
-<p>三表：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">create table if not exists phone(</span><br><span class="line">phoneid int(10) unsigned not null auto_increment,</span><br><span class="line">card int(10) unsigned not null,</span><br><span class="line">primary key(phoneid)</span><br><span class="line">    ) engine&#x3D;innodb;</span><br><span class="line"></span><br><span class="line">insert into phone(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into phone(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into phone(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into phone(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into phone(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into phone(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into phone(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into phone(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into phone(card) values(floor(1+(rand()*20)));</span><br></pre></td></tr></table></figure>
-<p>案例：<br><code>explain select * from class left join book on class.card=book.card left join phone on book.card=phone.card;</code><br>结论：<br>type全部为all，<br>建索引：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter table phone add index z(card);</span><br><span class="line">alter table book add index y(card);</span><br></pre></td></tr></table></figure>
-<p>后两行的type变为ref，且rows优化很好，因此索引最好设置在经常查询的字段中</p>
-<p>join语句优化：<br>尽可能减少join语句中的NestedLoop的循环总次数，“永远用小结果集驱动大的结果集”<br>优先优化NestedLoop的内层循环<br>保证join语句中被驱动表上join条件字段已经被索引<br>当无法保证被驱动表的join条件字段被索引且内存资源充足的情况下，不要太吝啬joinbuffer的设置</p>
-<h2 id="索引优化-1"><a href="#索引优化-1" class="headerlink" title="索引优化"></a>索引优化</h2><p>索引失效（需要避免）：</p>
-<ol>
-<li>全值匹配我最爱</li>
-<li>最佳左前缀法制：如果索引了多列，要遵守最佳左前缀法则，指的是查询<strong>从索引的最左前列开始并且不跳过索引中的列</strong></li>
-<li>不在索引列上做任何操作（计算、函数、（自动或手动）类型转换），会导致索引失效而转向全表扫描</li>
-<li>存储引擎不能使用索引中范围条件右边的列</li>
-<li>尽量使用覆盖索引（只访问索引的查询（索引列和查询列一致）），减少select*</li>
-<li>mysql在使用不等于（!=或&lt;&gt;）的时候无法使用索引会导致全表扫描</li>
-<li>is null，is not null也无法使用索引</li>
-<li>like以通配符开头（‘%abc…’）mysql索引失效会变成全表扫描的操作<br>如何解决like ‘%字符串%’时索引不被使用的方法？使用覆盖索引</li>
-<li>字符串不加单引号索引失效</li>
-<li>少用or，用它来连接时会索引失效 </li>
-</ol>
-<p>口诀：<br>全值匹配我最爱，最左前缀要遵守；<br>带头大哥不能死，中间兄弟不能断；<br>索引列上少计算，范围之后全失效；<br>Like百分写最右，覆盖索引不写星；<br>不等空值还有or，索引失效要少用；<br>var引号不可丢，SQL高级也不难！</p>
-<p>面试题分析：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">create table test03(</span><br><span class="line">id int primary key not null auto_increment,</span><br><span class="line">c1 char(10),</span><br><span class="line">c2 char(10),</span><br><span class="line">c3 char(10),</span><br><span class="line">c4 char(10),</span><br><span class="line">c5 char(10)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">insert into test03(c1,c2,c3,c4,c5) values(&#39;a1&#39;,&#39;a2&#39;,&#39;a3&#39;,&#39;a4&#39;,&#39;a5&#39;);</span><br><span class="line">insert into test03(c1,c2,c3,c4,c5) values(&#39;b1&#39;,&#39;b2&#39;,&#39;b3&#39;,&#39;b4&#39;,&#39;b5&#39;);</span><br><span class="line">insert into test03(c1,c2,c3,c4,c5) values(&#39;c1&#39;,&#39;c2&#39;,&#39;c3&#39;,&#39;c4&#39;,&#39;c5&#39;);</span><br><span class="line">insert into test03(c1,c2,c3,c4,c5) values(&#39;d1&#39;,&#39;d2&#39;,&#39;d3&#39;,&#39;d4&#39;,&#39;d5&#39;);</span><br><span class="line">insert into test03(c1,c2,c3,c4,c5) values(&#39;e1&#39;,&#39;e2&#39;,&#39;e3&#39;,&#39;e4&#39;,&#39;e5&#39;);</span><br><span class="line"></span><br><span class="line">建立索引：</span><br><span class="line">create index idx_test03_c1234 on test03(c1,c2,c3,c4);</span><br></pre></td></tr></table></figure>
-<p>问题：我们创建了复合索引idx_test03_c1234,请根据SQL分析下索引使用情况？</p>
-<ol>
-<li>explain select * from test03 where c1=’a1’;</li>
-<li>explain select * from test03 where c1=’a1’ and c2=’a2’;</li>
-<li>explain select * from test03 where c1=’a1’ and c2=’a2’ and c3=’a3’;</li>
-<li>explain select * from test03 where c1=’a1’ and c2=’a2’ and c3=’a3’ and c4=’a4’;</li>
-<li>explain select * from test03 where c1=’a1’ and c2=’a2’ and c4=’a4’ and c3=’a3’;</li>
-<li>explain select * from test03 where c4=’a4’ and c3=’a3’ and c2=’a2’ and c1=’a1’;</li>
-<li>explain select * from test03 where c1=’a1’ and c2=’a2’ and c3&gt;’a3’ and c4=’a4’;</li>
-<li>explain select * from test03 where c1=’a1’ and c2=’a2’ and c4&gt;’a4’ and c3=’a3’;</li>
-<li>explain select * from test03 where c1=’a1’ and c2=’a2’ and c4=’a4’ order by c3; – c3作用在排序而不是查找</li>
-<li>explain select * from test03 where c1=’a1’ and c2=’a2’ order by c3;</li>
-<li>explain select * from test03 where c1=’a1’ and c2=’a2’ order by c4; – 出现了filesort</li>
-<li>explain select * from test03 where c1=’a1’ and c5=’a5’ order by c2,c3; – 只用c1一个字段索引，但是c2、c3用于排序，无filesort</li>
-<li>explain select * from test03 where c1=’a1’ and c5=’a5’ order by c3,c2; – 出现了filesort，我们建的索引是1234，没有按照顺序来，3、2颠倒了</li>
-<li>explain select * from test03 where c1=’a1’ and c2=’a2’ order by c2,c3; </li>
-<li>explain select * from test03 where c1=’a1’ and c2=’a2’ and c5=’a5’ order by c2,c3;  – c1、c2两个字段索引，但是c2、c3用于排序，无filesort</li>
-<li>explain select * from test03 where c1=’a1’ and c2=’a2’ and c5=’a5’ order by c3,c2; – 存在常量c2，和13对比需要注意</li>
-<li>explain select * from test03 where c1=’a1’ and c4=’a4’ group by c2,c3; </li>
-<li>explain select * from test03 where c1=’a1’ and c4=’a4’ group by c3,c2; – 出现using temporary和using filesort<br>总结：</li>
-</ol>
-<ul>
-<li>定值、范围还是排序，一般order by是给个范围</li>
-<li>group by基本上都需要进行排序，会有临时表产生</li>
-</ul>
-<p>建议：</p>
-<ul>
-<li>对于单值索引，尽量选择针对当前query过滤性更好的索引</li>
-<li>在选择组合索引时，当前query中过滤性最好的字段在索引字段顺序中，位置越靠前越好</li>
-<li>当选择组合索引时，尽量选择可以能够包含当前query中where子句中更多字段的索引</li>
-<li>尽可能通过分析统计信息来调整query的写法达到选择合适索引的目的</li>
-</ul>
-
-      
-
-       
-         <div class="essayending">
-           <div>
-            <div style="text-align:center;color: #ccc;font-size:22px;">
-            <br/>
-            <br/>
- -------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------
-            <br/>
-            <br/>
-             <br/>
-             <br/>
-            </div>
-           </div>
-         </div>
-         
-       
-  
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/alipay.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/weixin.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.datasheep.info/2020/05/31/Mysql%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/06/01/Mysql%E6%9F%A5%E8%AF%A2%E6%88%AA%E5%8F%96%E5%88%86%E6%9E%90/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Mysql查询截取分析
-        
-      </div>
-    </a>
   
   
-    <a href="/2020/05/28/Mysql%E9%AB%98%E7%BA%A7/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Mysql高级</div>
-      <i class="icon-circle-right"></i>
-    </a>
+    </div></section>
   
 
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#索引优化"><span class="toc-number">1.</span> <span class="toc-text">索引优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#索引分析"><span class="toc-number">1.1.</span> <span class="toc-text">索引分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#索引优化-1"><span class="toc-number">1.2.</span> <span class="toc-text">索引优化</span></a></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-
-
-      <!-- 来必力City版安装代码 -->
-<div id="lv-container" data-id="city" data-uid="MTAyMC81MDIxMC8yNjcwMA">
-	<script type="text/javascript">
-   (function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
-
-       if (typeof LivereTower === 'function') { return; }
-
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
-
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-	</script>
-<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-</div>
-<!-- City版安装代码已完成 -->
-
-      
-
-  
-
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -556,9 +248,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

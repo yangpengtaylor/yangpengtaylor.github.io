@@ -6,20 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.datasheep.info">
-  <title>Mysql索引优化 | 数据杨的个人博客</title>
+  <title>mysql数据迁移：Incorrect string value: \\xE7 for column | 数据杨的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="索引优化">
+  <meta name="description" content="mysql数据迁移：Incorrect string value: ‘\xE7’ for column’问题描述在从hive数据仓库向mysql共享数据库迁移数据时，迁移流程出现了ERROR 1366的错误ERROR 1366 (HY000) at line 1: Incorrect string value: &#39;\\xE7&#39; for column系统环境：  Hive3.1.0">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mysql索引优化">
-<meta property="og:url" content="http://www.datasheep.info/2020/05/31/Mysql%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96/index.html">
+<meta property="og:title" content="mysql数据迁移：Incorrect string value: \\xE7 for column">
+<meta property="og:url" content="http://www.datasheep.info/2020/06/11/mysql%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB%EF%BC%9AIncorrect-string-value-xE7-for-column/index.html">
 <meta property="og:site_name" content="数据杨的个人博客">
-<meta property="og:description" content="索引优化">
+<meta property="og:description" content="mysql数据迁移：Incorrect string value: ‘\xE7’ for column’问题描述在从hive数据仓库向mysql共享数据库迁移数据时，迁移流程出现了ERROR 1366的错误ERROR 1366 (HY000) at line 1: Incorrect string value: &#39;\\xE7&#39; for column系统环境：  Hive3.1.0">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-05-31T02:01:50.000Z">
-<meta property="article:modified_time" content="2020-06-01T08:42:36.810Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200611143457777.bmp?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MzY5MDYx,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2020-06-11T07:48:37.000Z">
+<meta property="article:modified_time" content="2020-06-11T07:50:23.102Z">
 <meta property="article:author" content="Data Sheep">
-<meta property="article:tag" content="Mysql">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200611143457777.bmp?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MzY5MDYx,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="数据杨的个人博客" type="application/atom+xml">
   
@@ -164,14 +165,14 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Mysql索引优化" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-mysql数据迁移：Incorrect-string-value-xE7-for-column" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Mysql索引优化
+      mysql数据迁移：Incorrect string value: \\xE7 for column
     </h1>
   
 
@@ -186,8 +187,8 @@ var _hmt = _hmt || [];
   	    </a>
 	      
         
-          <a href="/2020/05/31/Mysql%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96/" class="archive-article-date">
-  	<time datetime="2020-05-31T02:01:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-31</time>
+          <a href="/2020/06/11/mysql%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB%EF%BC%9AIncorrect-string-value-xE7-for-column/" class="archive-article-date">
+  	<time datetime="2020-06-11T07:48:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-11</time>
 </a>
           
           <div style="margin-top:10px;">
@@ -196,7 +197,7 @@ var _hmt = _hmt || [];
         <i class="fa fa-keyboard-o"></i>
         <span class="post-meta-item-text" style="font-size: 16px;color: grey">  字数统计: </span>
         <!--这里样式可以自己定制-->
-        <span class="post-count" style="font-size: 16px;color: grey">2k字</span>
+        <span class="post-count" style="font-size: 16px;color: grey">197字</span>
       </span>
     </span>
     
@@ -205,7 +206,7 @@ var _hmt = _hmt || [];
       <span class="post-meta-item-icon">
         <i class="fa fa-hourglass-half"></i>
         <span class="post-meta-item-text" style="font-size: 16px;color: grey">  阅读时长: </span>
-        <span class="post-count" style="font-size: 16px;color: grey">9分</span>
+        <span class="post-count" style="font-size: 16px;color: grey">1分</span>
       </span>
     </span>
 </div>
@@ -223,7 +224,7 @@ var _hmt = _hmt || [];
   <div id="toc-article" class="toc-article">
       <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
     <strong class="toc-title">文章目录</strong>
-           <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#索引优化"><span class="toc-number">1.</span> <span class="toc-text">索引优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#索引分析"><span class="toc-number">1.1.</span> <span class="toc-text">索引分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#索引优化-1"><span class="toc-number">1.2.</span> <span class="toc-text">索引优化</span></a></li></ol></li></ol>
+           <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#mysql数据迁移：Incorrect-string-value-‘-xE7’-for-column’"><span class="toc-number">1.</span> <span class="toc-text">mysql数据迁移：Incorrect string value: ‘\xE7’ for column’</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-number">1.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题原因"><span class="toc-number">1.2.</span> <span class="toc-text">问题原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方法"><span class="toc-number">1.3.</span> <span class="toc-text">解决方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">1.4.</span> <span class="toc-text">参考</span></a></li></ol></li></ol>
          </div>
    <script type="text/javascript">
   function showToc(){
@@ -243,73 +244,19 @@ var _hmt = _hmt || [];
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="索引优化"><a href="#索引优化" class="headerlink" title="索引优化"></a>索引优化</h1><a id="more"></a>
-<h2 id="索引分析"><a href="#索引分析" class="headerlink" title="索引分析"></a>索引分析</h2><p>单表：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">create table if not exists article(</span><br><span class="line">id int(10) unsigned not null primary key auto_increment,</span><br><span class="line">author_id int(10) unsigned not null,</span><br><span class="line">category_id int(10) unsigned not null,</span><br><span class="line">views int(10) unsigned not null,</span><br><span class="line">comments int(10) unsigned not null,</span><br><span class="line">title varbinary(255) not null,</span><br><span class="line">content text not null</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">insert into article(author_id,category_id,views,comments,title,content) values </span><br><span class="line">(1,1,1,1,&#39;1&#39;,&#39;1&#39;),</span><br><span class="line">(2,2,2,2,&#39;2&#39;,&#39;2&#39;),</span><br><span class="line">(1,1,3,3,&#39;3&#39;,&#39;3&#39;);</span><br></pre></td></tr></table></figure>
-<p>案例：<br>1、查询category_id为1且comments大于1的情况下，views最多的article_id<br><code>explain select id,author_id from article where category_id= 1 and comments &gt; 1 order by views desc limit 1;</code><br>结论：type是all，extra出现了using filesort，效果很差必须优化<br>开始优化：<br>新建索引+删除索引</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alter table article add index idx_article_ccv(category_id,comments,views);</span><br><span class="line">create index idx_article_ccv on article(category_id,comments,views);</span><br><span class="line">drop index idx_article_ccv on article;</span><br></pre></td></tr></table></figure>
-<p>建立ccv索引后，仍出现using filesort，为什么索引没用？<br>按照BTree索引的原理，先排序category_id，如果遇到相同的category_id再排序comments，遇到相同的comments再排序views；<br>当comments字段在联合索引的中间位置，因comments&gt;1条件是一个范围值（range），mysql无法利用索引再对后面的views部分进行检索，即<strong>range类型查询字段后面的索引无效</strong></p>
-<p>建立第二次索引</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create index idx_article_cv on article(category_id,views);</span><br></pre></td></tr></table></figure>
-<p>type变成了ref，using filesort也消失了</p>
-<p>两表；</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">create table if not exists class(</span><br><span class="line">id int(10) unsigned not null primary key auto_increment,</span><br><span class="line">card int(10) unsigned not null</span><br><span class="line">);</span><br><span class="line">create table if not exists book(</span><br><span class="line">bookid int(10) unsigned not null primary key auto_increment,</span><br><span class="line">card int(10) unsigned not null</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">insert into class(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into class(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into class(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into class(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into class(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into class(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into class(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into class(card) values(floor(1+(rand()*20)));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">insert into book(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into book(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into book(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into book(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into book(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into book(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into book(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into book(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into book(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into book(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into book(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into book(card) values(floor(1+(rand()*20)));</span><br></pre></td></tr></table></figure>
-<p>案例：<br><code>explain select * from class left join book on class.card=book.card;</code><br>结论：type有all<br>添加索引优化<br><code>alter table book add index(card);</code><br>第二行 all 变成了 ref，rows也变成了1，优化明显<br>由左连接特性决定的，left join条件用于确定如何从右表搜索行，左边一定都有<br>所以右边是关键点，一定要建立索引<br><code>drop index card on book;</code></p>
-<p>第二次添加索引<br><code>alter table class add index(card);</code><br>第一行 all 变成了 index<br>总结：左连接建右表，右连接建左表</p>
-<p>三表：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">create table if not exists phone(</span><br><span class="line">phoneid int(10) unsigned not null auto_increment,</span><br><span class="line">card int(10) unsigned not null,</span><br><span class="line">primary key(phoneid)</span><br><span class="line">    ) engine&#x3D;innodb;</span><br><span class="line"></span><br><span class="line">insert into phone(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into phone(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into phone(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into phone(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into phone(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into phone(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into phone(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into phone(card) values(floor(1+(rand()*20)));</span><br><span class="line">insert into phone(card) values(floor(1+(rand()*20)));</span><br></pre></td></tr></table></figure>
-<p>案例：<br><code>explain select * from class left join book on class.card=book.card left join phone on book.card=phone.card;</code><br>结论：<br>type全部为all，<br>建索引：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter table phone add index z(card);</span><br><span class="line">alter table book add index y(card);</span><br></pre></td></tr></table></figure>
-<p>后两行的type变为ref，且rows优化很好，因此索引最好设置在经常查询的字段中</p>
-<p>join语句优化：<br>尽可能减少join语句中的NestedLoop的循环总次数，“永远用小结果集驱动大的结果集”<br>优先优化NestedLoop的内层循环<br>保证join语句中被驱动表上join条件字段已经被索引<br>当无法保证被驱动表的join条件字段被索引且内存资源充足的情况下，不要太吝啬joinbuffer的设置</p>
-<h2 id="索引优化-1"><a href="#索引优化-1" class="headerlink" title="索引优化"></a>索引优化</h2><p>索引失效（需要避免）：</p>
-<ol>
-<li>全值匹配我最爱</li>
-<li>最佳左前缀法制：如果索引了多列，要遵守最佳左前缀法则，指的是查询<strong>从索引的最左前列开始并且不跳过索引中的列</strong></li>
-<li>不在索引列上做任何操作（计算、函数、（自动或手动）类型转换），会导致索引失效而转向全表扫描</li>
-<li>存储引擎不能使用索引中范围条件右边的列</li>
-<li>尽量使用覆盖索引（只访问索引的查询（索引列和查询列一致）），减少select*</li>
-<li>mysql在使用不等于（!=或&lt;&gt;）的时候无法使用索引会导致全表扫描</li>
-<li>is null，is not null也无法使用索引</li>
-<li>like以通配符开头（‘%abc…’）mysql索引失效会变成全表扫描的操作<br>如何解决like ‘%字符串%’时索引不被使用的方法？使用覆盖索引</li>
-<li>字符串不加单引号索引失效</li>
-<li>少用or，用它来连接时会索引失效 </li>
-</ol>
-<p>口诀：<br>全值匹配我最爱，最左前缀要遵守；<br>带头大哥不能死，中间兄弟不能断；<br>索引列上少计算，范围之后全失效；<br>Like百分写最右，覆盖索引不写星；<br>不等空值还有or，索引失效要少用；<br>var引号不可丢，SQL高级也不难！</p>
-<p>面试题分析：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">create table test03(</span><br><span class="line">id int primary key not null auto_increment,</span><br><span class="line">c1 char(10),</span><br><span class="line">c2 char(10),</span><br><span class="line">c3 char(10),</span><br><span class="line">c4 char(10),</span><br><span class="line">c5 char(10)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">insert into test03(c1,c2,c3,c4,c5) values(&#39;a1&#39;,&#39;a2&#39;,&#39;a3&#39;,&#39;a4&#39;,&#39;a5&#39;);</span><br><span class="line">insert into test03(c1,c2,c3,c4,c5) values(&#39;b1&#39;,&#39;b2&#39;,&#39;b3&#39;,&#39;b4&#39;,&#39;b5&#39;);</span><br><span class="line">insert into test03(c1,c2,c3,c4,c5) values(&#39;c1&#39;,&#39;c2&#39;,&#39;c3&#39;,&#39;c4&#39;,&#39;c5&#39;);</span><br><span class="line">insert into test03(c1,c2,c3,c4,c5) values(&#39;d1&#39;,&#39;d2&#39;,&#39;d3&#39;,&#39;d4&#39;,&#39;d5&#39;);</span><br><span class="line">insert into test03(c1,c2,c3,c4,c5) values(&#39;e1&#39;,&#39;e2&#39;,&#39;e3&#39;,&#39;e4&#39;,&#39;e5&#39;);</span><br><span class="line"></span><br><span class="line">建立索引：</span><br><span class="line">create index idx_test03_c1234 on test03(c1,c2,c3,c4);</span><br></pre></td></tr></table></figure>
-<p>问题：我们创建了复合索引idx_test03_c1234,请根据SQL分析下索引使用情况？</p>
-<ol>
-<li>explain select * from test03 where c1=’a1’;</li>
-<li>explain select * from test03 where c1=’a1’ and c2=’a2’;</li>
-<li>explain select * from test03 where c1=’a1’ and c2=’a2’ and c3=’a3’;</li>
-<li>explain select * from test03 where c1=’a1’ and c2=’a2’ and c3=’a3’ and c4=’a4’;</li>
-<li>explain select * from test03 where c1=’a1’ and c2=’a2’ and c4=’a4’ and c3=’a3’;</li>
-<li>explain select * from test03 where c4=’a4’ and c3=’a3’ and c2=’a2’ and c1=’a1’;</li>
-<li>explain select * from test03 where c1=’a1’ and c2=’a2’ and c3&gt;’a3’ and c4=’a4’;</li>
-<li>explain select * from test03 where c1=’a1’ and c2=’a2’ and c4&gt;’a4’ and c3=’a3’;</li>
-<li>explain select * from test03 where c1=’a1’ and c2=’a2’ and c4=’a4’ order by c3; – c3作用在排序而不是查找</li>
-<li>explain select * from test03 where c1=’a1’ and c2=’a2’ order by c3;</li>
-<li>explain select * from test03 where c1=’a1’ and c2=’a2’ order by c4; – 出现了filesort</li>
-<li>explain select * from test03 where c1=’a1’ and c5=’a5’ order by c2,c3; – 只用c1一个字段索引，但是c2、c3用于排序，无filesort</li>
-<li>explain select * from test03 where c1=’a1’ and c5=’a5’ order by c3,c2; – 出现了filesort，我们建的索引是1234，没有按照顺序来，3、2颠倒了</li>
-<li>explain select * from test03 where c1=’a1’ and c2=’a2’ order by c2,c3; </li>
-<li>explain select * from test03 where c1=’a1’ and c2=’a2’ and c5=’a5’ order by c2,c3;  – c1、c2两个字段索引，但是c2、c3用于排序，无filesort</li>
-<li>explain select * from test03 where c1=’a1’ and c2=’a2’ and c5=’a5’ order by c3,c2; – 存在常量c2，和13对比需要注意</li>
-<li>explain select * from test03 where c1=’a1’ and c4=’a4’ group by c2,c3; </li>
-<li>explain select * from test03 where c1=’a1’ and c4=’a4’ group by c3,c2; – 出现using temporary和using filesort<br>总结：</li>
-</ol>
+        <h1 id="mysql数据迁移：Incorrect-string-value-‘-xE7’-for-column’"><a href="#mysql数据迁移：Incorrect-string-value-‘-xE7’-for-column’" class="headerlink" title="mysql数据迁移：Incorrect string value: ‘\xE7’ for column’"></a>mysql数据迁移：Incorrect string value: ‘\xE7’ for column’</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在从hive数据仓库向mysql共享数据库迁移数据时，迁移流程出现了ERROR 1366的错误<br><code>ERROR 1366 (HY000) at line 1: Incorrect string value: &#39;\\xE7&#39; for column</code><br>系统环境：</p>
 <ul>
-<li>定值、范围还是排序，一般order by是给个范围</li>
-<li>group by基本上都需要进行排序，会有临时表产生</li>
+<li>Hive3.1.0</li>
+<li>Mysql5.7.28</li>
 </ul>
-<p>建议：</p>
-<ul>
-<li>对于单值索引，尽量选择针对当前query过滤性更好的索引</li>
-<li>在选择组合索引时，当前query中过滤性最好的字段在索引字段顺序中，位置越靠前越好</li>
-<li>当选择组合索引时，尽量选择可以能够包含当前query中where子句中更多字段的索引</li>
-<li>尽可能通过分析统计信息来调整query的写法达到选择合适索引的目的</li>
-</ul>
+<h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p>\xE7是<strong>Unicode</strong>字符串的UTF-8编码，这是一种特殊字符串，是4bytes的，而UTF-8在Mysql中是3bytes的，所以导致字符串无效。</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><ol>
+<li>将表的字符集设置为utf8mb4，排序规则设置为utf8mb4_unicode_ci<br><code>ALTER TABLE tbname DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</code></li>
+<li>将对应字段的字符集设置为utf8mb4，排序规则设置为utf8mb4_unicode_ci</li>
+</ol>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://stackoverflow.com/questions/62043858/incorrect-string-value-xf2-xb8-x80-xa0-xe6-x88" target="_blank" rel="noopener">https://stackoverflow.com/questions/62043858/incorrect-string-value-xf2-xb8-x80-xa0-xe6-x88</a></p>
+<hr>
+<p>CSDN：<a href="https://blog.csdn.net/qq_36369061" target="_blank" rel="noopener">https://blog.csdn.net/qq_36369061</a><br>博客圆：<a href="https://www.cnblogs.com/datasheep/" target="_blank" rel="noopener">https://www.cnblogs.com/datasheep/</a><br>个人公众号：【DataSheep杨】<br><img src="https://img-blog.csdnimg.cn/20200611143457777.bmp?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MzY5MDYx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 
       
 
@@ -367,17 +314,6 @@ var _hmt = _hmt || [];
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -428,7 +364,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.datasheep.info/2020/05/31/Mysql%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.datasheep.info/2020/06/11/mysql%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB%EF%BC%9AIncorrect-string-value-xE7-for-column/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -442,18 +378,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2020/06/01/Mysql%E6%9F%A5%E8%AF%A2%E6%88%AA%E5%8F%96%E5%88%86%E6%9E%90/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Mysql查询截取分析
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/05/28/Mysql%E9%AB%98%E7%BA%A7/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Mysql高级</div>
+    <a href="/2020/06/06/Python%E7%88%AC%E8%99%AB%EF%BC%88%E4%B8%80%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python爬虫（一）</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -481,7 +408,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#索引优化"><span class="toc-number">1.</span> <span class="toc-text">索引优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#索引分析"><span class="toc-number">1.1.</span> <span class="toc-text">索引分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#索引优化-1"><span class="toc-number">1.2.</span> <span class="toc-text">索引优化</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#mysql数据迁移：Incorrect-string-value-‘-xE7’-for-column’"><span class="toc-number">1.</span> <span class="toc-text">mysql数据迁移：Incorrect string value: ‘\xE7’ for column’</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题描述"><span class="toc-number">1.1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题原因"><span class="toc-number">1.2.</span> <span class="toc-text">问题原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方法"><span class="toc-number">1.3.</span> <span class="toc-text">解决方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">1.4.</span> <span class="toc-text">参考</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
